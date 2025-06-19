@@ -1,39 +1,31 @@
-/**
-* Template Name: Bikin
-* Template URL: https://bootstrapmade.com/bikin-free-simple-landing-page-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /* Font & Color Variables */
 :root {
   --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Nunito", sans-serif;
   --nav-font: "Lato", sans-serif;
-  --primary-color: #00aaff; /* Màu xanh dương chủ đạo */
-  --secondary-color: #ffffff; /* Màu trắng cho chữ */
-  --background-color: #f8f9fa; /* Nền sáng cho phần sản phẩm nổi bật */
-  --text-light: #6c757d; /* Màu chữ xám nhạt */
-  --text-danger: #dc3545; /* Màu đỏ cho danh mục */
-  --banner-bg: #1e2a44; /* Màu nền banner */
+  --primary-color: #00aaff;
+  --secondary-color: #ffffff;
+  --background-color: #f8f9fa;
+  --text-light: #6c757d;
+  --text-danger: #dc3545;
+  --banner-bg: #1e2a44;
 }
 
 /* General Styling */
 html, body {
-  height: 100%; /* Đảm bảo toàn bộ chiều cao */
-  margin: 0; /* Xóa margin mặc định */
-  padding: 0; /* Xóa padding mặc định */
-  overflow-x: hidden; /* Ngăn cuộn ngang */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 body {
   color: var(--secondary-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
-  display: flex; /* Sử dụng flex để kiểm soát chiều cao */
+  display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Đảm bảo body chiếm tối thiểu chiều cao viewport */
+  min-height: 100vh;
 }
 
 a {
@@ -54,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Search Section Styling - Tìm kiếm */
 .search-section {
-  background-color: #dc3545; /* Màu đỏ như trong hình */
+  background-color: #dc3545;
   padding: 5px 0;
   width: 100%;
 }
@@ -64,7 +56,8 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: none; /* Loại bỏ giới hạn max-width từ container */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .search-icon {
@@ -82,13 +75,14 @@ h1, h2, h3, h4, h5, h6 {
 .search-inputs {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .search-inputs .form-control,
 .search-inputs .form-select {
-  max-width: 200px;
-  margin-right: 10px;
-  height: 34px; /* Điều chỉnh chiều cao để khớp với thiết kế */
+  max-width: 150px;
+  margin-right: 0;
+  height: 34px;
   font-size: 14px;
   padding: 6px 12px;
 }
@@ -96,23 +90,48 @@ h1, h2, h3, h4, h5, h6 {
 .search-inputs .btn-search {
   padding: 6px 20px;
   font-weight: bold;
-  height: 34px; /* Điều chỉnh chiều cao nút */
-  width: 400px; /* Đặt chiều rộng cố định cho nút */
-  background-color: #000000; /* Màu đen như trong hình */
+  height: 34px;
+  width: auto;
+  background-color: #000000;
   border: none;
-  border-radius: 0; /* Loại bỏ bo tròn */
-  text-transform: uppercase; /* Chữ in hoa */
+  border-radius: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .search-inputs .btn-search:hover {
-  background-color: #333333; /* Màu xám đậm khi hover */
+  background-color: #333333;
+}
+
+/* Responsive Search Section */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  .search-icon {
+    margin-bottom: 10px;
+  }
+  .search-inputs {
+    flex-direction: column;
+    width: 100%;
+  }
+  .search-inputs .form-control,
+  .search-inputs .form-select,
+  .search-inputs .btn-search {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  .search-inputs .btn-search {
+    width: 100%;
+  }
 }
 
 /* Featured Products Styling - Sản phẩm nổi bật */
 .featured-products {
-  background-color: #ffffff; /* Nền trắng cho phần sản phẩm nổi bật */
+  background-color: #ffffff;
   padding: 40px 0;
-  flex: 1 0 auto; /* Cho phép phần này co giãn nhưng không ảnh hưởng footer */
+  flex: 1 0 auto;
 }
 
 .featured-products .header-row {
@@ -120,18 +139,20 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .featured-products h2 {
   font-size: 24px;
   font-weight: 700;
-  color: #000000; /* Tiêu đề màu đen */
+  color: #000000;
   margin: 0;
 }
 
 .featured-products .categories {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .featured-products .categories a {
@@ -146,24 +167,51 @@ h1, h2, h3, h4, h5, h6 {
   padding: 15px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
 .featured-products .product-image {
-  max-height: 300px; /* Tăng kích thước hình ảnh lên 300px như hình số 2 */
-  object-fit: cover;
+  max-height: 350px; /* Đặt 350px trên desktop */
+  object-fit: contain;
   border-radius: 5px;
   width: 100%;
   margin-bottom: 10px;
 }
 
 .featured-products .product-icons {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--text-light);
   margin-top: 10px;
 }
 
 .featured-products .product-icons i {
   margin-right: 5px;
+}
+
+/* Responsive Featured Products */
+@media (max-width: 576px) {
+  .featured-products h2 {
+    font-size: 20px;
+  }
+  .featured-products .col-md-3 {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .featured-products .product-image {
+    max-height: 250px; /* Giữ nguyên trên mobile */
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .featured-products .col-md-3 {
+    width: 50%;
+  }
+  .featured-products .product-image {
+    max-height: 200px; /* Giữ nguyên trên tablet */
+  }
 }
 
 /* Banner Section Styling - Banner ở giữa */
@@ -188,41 +236,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .banner-card {
-  background: #4a4e69; /* Nền xám như trong hình */
+  background: #4a4e69;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
   height: 100%;
-  color: var(--secondary-color); /* Chữ trắng */
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .banner-image {
-  max-height: 200px;
-  object-fit: cover;
+  max-height: 350px; /* Đặt 350px trên desktop */
+  object-fit: contain;
   width: 100%;
   border-radius: 5px;
 }
 
-.swiper-pagination {
-  position: relative;
-  margin-top: 20px;
+/* Responsive Banner Section */
+@media (max-width: 576px) {
+  .banner-content h3 {
+    font-size: 18px;
+  }
+  .banner-content p {
+    font-size: 14px;
+  }
+  .banner-image {
+    max-height: 250px; /* Giữ nguyên trên mobile */
+  }
 }
 
-.swiper-pagination-bullet {
-  background-color: #fff;
-  opacity: 0.5;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  background-color: var(--primary-color);
+@media (min-width: 577px) and (max-width: 992px) {
+  .banner-image {
+    max-height: 150px; /* Giữ nguyên trên tablet */
+  }
 }
 
 /* Toyota Products Styling - TOYOTA */
 .toyota-products {
   background-color: #f5f7fa;
   padding: 40px 0;
-  flex: 1 0 auto; /* Cho phép phần này co giãn nhưng không ảnh hưởng footer */
+  flex: 1 0 auto;
 }
 
 .toyota-header-row h2 {
@@ -235,6 +290,9 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .toyota-swiper .product-card {
@@ -245,14 +303,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .toyota-swiper img {
-  max-height: 400px;
-  object-fit: cover;
+  max-height: 350px; /* Đặt 350px trên desktop */
+  object-fit: contain;
   border-radius: 5px;
   width: 100%;
 }
 
 .toyota-product-icons {
-  font-size: 14px;
+  font-size: 12px;
   color: #6c757d;
   margin-top: 10px;
 }
@@ -286,20 +344,43 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
+/* Responsive Toyota Products */
+@media (max-width: 576px) {
+  .toyota-swiper img {
+    max-height: 250px; /* Giữ nguyên trên mobile */
+  }
+  .toyota-product-icons {
+    font-size: 10px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .toyota-swiper img {
+    max-height: 250px; /* Giữ nguyên trên tablet */
+  }
+  .toyota-swiper {
+    --swiper-navigation-size: 20px;
+  }
+}
+
 /* Footer Styling - Footer */
 .footer {
   color: #ffffff;
   background-color: #000000;
   font-size: 14px;
   position: relative;
-  flex-shrink: 0; /* Ngăn footer co lại quá mức */
+  flex-shrink: 0;
   width: 100%;
 }
 
 .footer .footer-top {
   padding-top: 50px;
   border-top: 1px solid #333333;
-  padding-bottom: 0; /* Xóa padding dưới để sát mép */
+  padding-bottom: 0;
 }
 
 .footer .footer-about .logo {
@@ -377,7 +458,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer .footer-newsletter .newsletter-form {
   margin-top: 30px;
-  margin-bottom: 0; /* Xóa margin dưới để sát nút Subscribe */
+  margin-bottom: 0;
   padding: 6px 8px;
   position: relative;
   border-radius: 4px;
@@ -411,10 +492,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer .copyright {
-  padding: 0; /* Xóa padding để kiểm tra, sau đó điều chỉnh nếu cần */
+  padding: 0;
   border-top: 1px solid #333333;
-  margin-bottom: 0; /* Xóa margin dư thừa */
-  min-height: 50px; /* Đảm bảo chiều cao tối thiểu để hiển thị nội dung */
+  margin-bottom: 0;
+  min-height: 50px;
 }
 
 .footer .copyright p {
@@ -480,5 +561,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Overriding Bootstrap Default Margin/Padding */
 .container {
-  padding-bottom: 0 !important; /* Loại bỏ padding dưới từ Bootstrap */
+  padding-bottom: 0 !important;
+}
+
+/* Responsive General Adjustments */
+@media (max-width: 576px) {
+  h2 {
+    font-size: 20px;
+  }
+  .container {
+    padding: 0 15px;
+  }
 }
