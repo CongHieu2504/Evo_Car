@@ -367,6 +367,140 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Banner Title Styling */
+.banner-title {
+  background-color: #ffffff;
+  padding: 40px 0;
+  flex: 1 0 auto;
+}
+
+.banner-title-header {
+  text-align: center;
+}
+
+.banner-title-header-image {
+  max-height: 400px;
+  object-fit: contain;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.banner-title-text-black {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.banner-title-text-black:hover {
+  color: #dc3545;
+}
+
+.banner-title-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-title-image {
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.view-all-button {
+  background-color: #000000; /* Nền đen như mẫu */
+  color: #ffffff; /* Chữ trắng */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px; /* Bo góc như mẫu */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.view-all-button:hover {
+  background-color: #dc3545; /* Màu đỏ khi hover */
+  color: #ffffff;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--primary-color);
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 10; /* Đảm bảo nút điều hướng nằm trên các phần tử khác */
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 10px; /* Tạo khoảng cách giữa pagination và slide */
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--primary-color);
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* Responsive Banner Title */
+@media (max-width: 576px) {
+  .banner-title-text-black {
+    font-size: 20px;
+  }
+  .banner-title-header-image {
+    max-height: 150px;
+  }
+  .banner-title-image {
+    max-height: 200px;
+  }
+  .view-all-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .banner-title-header-image {
+    max-height: 250px;
+  }
+  .banner-title-image {
+    max-height: 250px;
+  }
+  .swiper {
+    --swiper-navigation-size: 20px;
+  }
+}
+
 /* Footer Styling - Footer */
 .footer {
   color: #ffffff;

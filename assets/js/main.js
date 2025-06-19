@@ -62,4 +62,33 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+
+    // Khởi tạo Swiper cho Banner Title
+    var bannerTitleSwiper = new Swiper('.banner-title-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            }
+        }
+    });
 });
