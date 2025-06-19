@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Index - Bikin Bootstrap Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Tìm kiếm -->
+    <section class="search-section">
+        <div class="search-bar bg-danger text-white py-2">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="search-icon me-3">
+                    <i class="bi bi-car-front"></i> Tìm Kiếm Xe
+                </div>
+                <div class="search-inputs d-flex align-items-center">
+                    <input type="text" class="form-control me-2" placeholder="Từ khóa" aria-label="Từ khóa">
+                    <select class="form-select me-2" aria-label="Dòng xe">
+                        <option value="all">Tất cả</option>
+                        <option value="suv">SUV</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="mpv">MPV</option>
+                        <option value="hatchback">Hatch Back</option>
+                    </select>
+                    <select class="form-select me-2" aria-label="Thương hiệu">
+                        <option value="all">Tất cả</option>
+                        <option value="mitsubishi">Mitsubishi</option>
+                        <option value="mazda">Mazda</option>
+                        <option value="toyota">Toyota</option>
+                    </select>
+                    <button type="button" class="btn btn-dark btn-search">TÌM KIẾM</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sản phẩm nổi bật -->
+    <section class="featured-products py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-row d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="text-black m-0">Sản phẩm nổi bật</h2>
+                        <div class="categories d-flex">
+                            <a href="#" class="text-danger mx-2">Hatch Back</a>
+                            <a href="#" class="text-danger mx-2">Sedan</a>
+                            <a href="#" class="text-danger mx-2">Pick up</a>
+                            <a href="#" class="text-danger mx-2">MPV</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row text-center">
+                        <!-- 8 sản phẩm -->
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="product-card">
+                                <img src="assets/img/corolla.webp" alt="Vios 1.5E SMT" class="product-image">
+                                <h5 class="text-black mt-2">Vios 1.5E SMT</h5>
+                                <p class="text-muted">531.000.000đ</p>
+                                <div class="product-icons">
+                                    <i class="bi bi-calendar"></i> 2019
+                                    <i class="bi bi-people"></i> 5 chỗ
+                                    <i class="bi bi-gear"></i> Số sàn
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="product-card">
+                                <img src="assets/img/mitsubishi-triton-4x2-at-mivec-10l-2019.webp"
+                                    alt="Mitsubishi Triton" class="product-image">
+                                <h5 class="text-black mt-2">Mitsubishi Triton</h5>
+                                <p class="text-muted">555.000.000đ</p>
+                                <div class="product-icons">
+                                    <i class="bi bi-calendar"></i> 2019
+                                    <i class="bi bi-people"></i> 7 chỗ
+                                    <i class="bi bi-gear"></i> Tự động
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="product-card">
+                                <img src="assets/img/nguoi-dua-tin-toyota-rush-2018-ra-mat-thai-lan-1-jpeg.webp"
+                                    alt="Mitsubishi Xpander" class="product-image">
+                                <h5 class="text-black mt-2">Mitsubishi Xpander</h5>
+                                <p class="text-muted">550.000.000đ</p>
+                                <div class="product-icons">
+                                    <i class="bi bi-calendar"></i> 2019
+                                    <i class="bi bi-people"></i> 6 chỗ
+                                    <i class="bi bi-gear"></i> Tự động
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="product-card">
+                                <img src="assets/img/toyota-avanza.webp" alt="Rush S 1.5AT" class="product-image">
+                                <h5 class="text-black mt-2">Rush S 1.5AT</h5>
+                                <p class="text-muted">668.000.000đ</p>
+                                <div class="product-icons">
+                                    <i class="bi bi-calendar"></i> 2018
+                                    <i class="bi bi-people"></i> 7 chỗ
+                                    <i class="bi bi-gear"></i> Số sàn
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="product-card">
+                                <img src="assets/img/toyota-wifo.webp" alt="Corolla Altis" class="product-image">
+                                <h5 class="text-black mt-2">Corolla Altis</h5>
+                                <p class="text-muted">600.000.000đ</p>
+                                <div class="product-icons">
+                                    <i class="bi bi-calendar"></i> 2019
+                                    <i class="bi bi-people"></i> 5 chỗ
+                                    <i class="bi bi-gear"></i> Tự động
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="product-card">
+                                <img src="assets/img/xe-toyota-vios-2018-khuyen-mai-1.webp" alt="Toyota Avanza"
+                                    class="product-image">
+                                <h5 class="text-black mt-2">Toyota Avanza</h5>
+                                <p class="text-muted">450.000.000đ</p>
+                                <div class="product-icons">
+                                    <i class="bi bi-calendar"></i> 2018
+                                    <i class="bi bi-people"></i> 7 chỗ
+                                    <i class="bi bi-gear"></i> Số sàn
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="product-card">
+                                <img src="assets/img/toyota-avanza.webp" alt="Toyota Wigo" class="product-image">
+                                <h5 class="text-black mt-2">Toyota Wigo</h5>
+                                <p class="text-muted">350.000.000đ</p>
+                                <div class="product-icons">
+                                    <i class="bi bi-calendar"></i> 2020
+                                    <i class="bi bi-people"></i> 5 chỗ
+                                    <i class="bi bi-gear"></i> Số sàn
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="product-card">
+                                <img src="assets/img/toyota-wifo.webp" alt="Toyota Yaris" class="product-image">
+                                <h5 class="text-black mt-2">Toyota Yaris</h5>
+                                <p class="text-muted">500.000.000đ</p>
+                                <div class="product-icons">
+                                    <i class="bi bi-calendar"></i> 2019
+                                    <i class="bi bi-people"></i> 5 chỗ
+                                    <i class="bi bi-gear"></i> Tự động
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner ở giữa -->
+    <section class="banner-section py-4">
+        <div class="container">
+            <div class="banner-content text-center mb-3">
+                <h3 class="text-white">9999+ khách hàng mua xe tại Evo Car</h3>
+                <p class="text-white">Sự tin tưởng của khách hàng chính là thành công lớn nhất của chúng tôi</p>
+            </div>
+            <div class="swiper banner-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="banner-card">
+                            <img src="assets/img/corolla.webp" alt="Corolla Altis" class="banner-image">
+                            <p class="text-white mt-2">Corolla Altis 2020: Sedan đẳng cấp từ Toyota</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-card">
+                            <img src="assets/img/corolla.webp" alt="Corolla Altis" class="banner-image">
+                            <p class="text-white mt-2">Corolla Altis 2019: Thiết kế hiện đại, tiết kiệm nhiên liệu</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-card">
+                            <img src="assets/img/corolla.webp" alt="Corolla Altis" class="banner-image">
+                            <p class="text-white mt-2">Corolla Altis 2021: Tích hợp công nghệ tiên tiến</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-card">
+                            <img src="assets/img/corolla.webp" alt="Corolla Altis" class="banner-image">
+                            <p class="text-white mt-2">Corolla Altis 2020: Sự lựa chọn hoàn hảo cho gia đình</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-card">
+                            <img src="assets/img/corolla.webp" alt="Corolla Altis" class="banner-image">
+                            <p class="text-white mt-2">Corolla Altis 2020: Sự lựa chọn hoàn hảo cho gia đình</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-card">
+                            <img src="assets/img/corolla.webp" alt="Corolla Altis" class="banner-image">
+                            <p class="text-white mt-2">Corolla Altis 2020: Sự lựa chọn hoàn hảo cho gia đình</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOYOTA -->
+    <section class="toyota-products py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="toyota-header-row d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="text-black m-0">TOYOTA</h2>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="swiper toyota-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Sản phẩm 1 -->
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <img src="assets/img/corolla.webp" alt="Vios 1.5E SMT" class="img-fluid">
+                                    <h5 class="text-black mt-2">Vios 1.5E SMT</h5>
+                                    <p class="text-muted">531.000.000đ</p>
+                                    <div class="toyota-product-icons">
+                                        <i class="bi bi-calendar"></i> 2019
+                                        <i class="bi bi-people"></i> 5 chỗ
+                                        <i class="bi bi-gear"></i> Số sàn
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Sản phẩm 2 -->
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <img src="assets/img/mitsubishi-triton-4x2-at-mivec-10l-2019.webp"
+                                        alt="Corolla Altis" class="img-fluid">
+                                    <h5 class="text-black mt-2">Corolla Altis</h5>
+                                    <p class="text-muted">600.000.000đ</p>
+                                    <div class="toyota-product-icons">
+                                        <i class="bi bi-calendar"></i> 2019
+                                        <i class="bi bi-people"></i> 5 chỗ
+                                        <i class="bi bi-gear"></i> Tự động
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Sản phẩm 3 -->
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <img src="assets/img/nguoi-dua-tin-toyota-rush-2018-ra-mat-thai-lan-1-jpeg.webp"
+                                        alt="Toyota Avanza" class="img-fluid">
+                                    <h5 class="text-black mt-2">Toyota Avanza</h5>
+                                    <p class="text-muted">450.000.000đ</p>
+                                    <div class="toyota-product-icons">
+                                        <i class="bi bi-calendar"></i> 2018
+                                        <i class="bi bi-people"></i> 7 chỗ
+                                        <i class="bi bi-gear"></i> Số sàn
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Sản phẩm 4 -->
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <img src="assets/img/toyota-avanza.webp" alt="Toyota Wigo" class="img-fluid">
+                                    <h5 class="text-black mt-2">Toyota Wigo</h5>
+                                    <p class="text-muted">350.000.000đ</p>
+                                    <div class="toyota-product-icons">
+                                        <i class="bi bi-calendar"></i> 2020
+                                        <i class="bi bi-people"></i> 5 chỗ
+                                        <i class="bi bi-gear"></i> Số sàn
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Sản phẩm 5 -->
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <img src="assets/img/toyota-wifo.webp" alt="Toyota Yaris" class="img-fluid">
+                                    <h5 class="text-black mt-2">Toyota Yaris</h5>
+                                    <p class="text-muted">500.000.000đ</p>
+                                    <div class="toyota-product-icons">
+                                        <i class="bi bi-calendar"></i> 2019
+                                        <i class="bi bi-people"></i> 5 chỗ
+                                        <i class="bi bi-gear"></i> Tự động
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Sản phẩm 6 -->
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <img src="assets/img/xe-toyota-vios-2018-khuyen-mai-1.webp" alt="Toyota Yaris"
+                                        class="img-fluid">
+                                    <h5 class="text-black mt-2">Toyota Yaris</h5>
+                                    <p class="text-muted">500.000.000đ</p>
+                                    <div class="toyota-product-icons">
+                                        <i class="bi bi-calendar"></i> 2019
+                                        <i class="bi bi-people"></i> 5 chỗ
+                                        <i class="bi bi-gear"></i> Tự động
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Nút điều hướng -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <!-- Thanh cuộn -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span class="sitename">Evo Car</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>70 Lu Gia, Ward 15, District 11, Ho Chi Minh City</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>1900 6750</span></p>
+                        <p><strong>Email:</strong> <span>support@sapo.vn</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Mua hàng</h4>
+                    <ul>
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Sản phẩm</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Đăng ký lái thử</a></li>
+                        <li><a href="#">Đại lý</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Dịch vụ khách hàng</h4>
+                    <ul>
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Sản phẩm</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Đăng ký lái thử</a></li>
+                        <li><a href="#">Đại lý</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12 footer-newsletter">
+                    <h4>Đăng ký nhận tin</h4>
+                    <p>Nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
+                    <form action="forms/newsletter.php" method="post" class="php-email-form">
+                        <div class="newsletter-form"><input type="email" name="email"><input type="submit"
+                                value="Subscribe"></div>
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Evo car</strong> <span>All Rights Reserved</span>
+            </p>
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
