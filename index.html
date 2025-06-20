@@ -31,6 +31,121 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="container-fluid">
+            <div class="logo">
+                <img src="/assets/img/logo.webp" alt="Logo">
+            </div>
+
+            <!-- Navmenu cho desktop -->
+            <nav class="navmenu">
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li class="dropdown">
+                        <a href="#">Sản phẩm</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <span class="column-title">Hatch Back</span>
+                                <ul>
+                                    <li><a href="#">Hyundai i10</a></li>
+                                    <li><a href="#">KIA Morning</a></li>
+                                    <li><a href="#">Chevrolet Spark</a></li>
+                                    <li><a href="#">Mitsubishi Mirage</a></li>
+                                    <li><a href="#">Suzuki Celerio</a></li>
+                                    <li><a href="#">Ford Focus</a></li>
+                                    <li><a href="#">Toyota Yaris</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">Sedan</span>
+                                <ul>
+                                    <li><a href="#">Hyundai i10</a></li>
+                                    <li><a href="#">KIA Morning</a></li>
+                                    <li><a href="#">Chevrolet Spark</a></li>
+                                    <li><a href="#">Mitsubishi Mirage</a></li>
+                                    <li><a href="#">Suzuki Celerio</a></li>
+                                    <li><a href="#">Ford Focus</a></li>
+                                    <li><a href="#">Toyota Yaris</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">Pick Up</span>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">MPV</span>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">SUV</span>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">Crossover</span>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">Coupe - Xe Thế Thao</span>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">Convertible - Xe Mui Trần</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Tin tức</a>
+                        <div class="dropdown-menu news-menu">
+                            <div class="dropdown-column">
+                                <ul>
+                                    <li><a href="#">Mua xe</a></li>
+                                    <li><a href="#">Lái xe</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Đăng ký lái thử</a></li>
+                    <li><a href="#">Đại lý</a></li>
+                </ul>
+            </nav>
+            <!-- Navmenu mới cho mobile -->
+            <div class="modal-overlay" id="mobile-nav-modal">
+                <div class="modal-content">
+                    <button class="modal-close" id="modal-close">×</button>
+                    <h2 class="modal-title">Danh Mục Sản Phẩm</h2>
+                    <nav class="modal-menu">
+                        <ul>
+                            <li><a href="#">Trang Chủ</a></li>
+                            <li><a href="#">Giới Thiệu</a></li>
+                            <li><a href="#">Hệ Thống</a></li>
+                            <li class="modal-dropdown">
+                                <a href="#" class="modal-product-toggle">Sản Phẩm <span class="toggle-icon">+</span></a>
+                                <ul class="modal-sub-menu"></ul>
+                            </li>
+                            <li class="modal-dropdown">
+                                <a href="#" class="modal-news-toggle">Tin tức <span class="toggle-icon">+</span></a>
+                                <ul class="modal-news-sub-menu">
+                                    <li><a href="#">Mua xe</a></li>
+                                    <li><a href="#">Lái xe</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Liên Hệ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="mobile-nav-toggle">☰</div>
+                <div class="header-actions">
+                    <a href="#" class="search-icon" title="Tìm kiếm"><i class="bi bi-search"></i></a>
+                    <a href="#" class="user-icon" title="Tài khoản"><i class="bi bi-person"></i></a>
+                    <a href="#" class="cart-icon" title="Yêu thích"><i class="bi bi-heart"></i><span>0</span></a>
+                    <a href="#" class="cart-icon" title="Giỏ hàng"><i class="bi bi-cart"></i><span>0</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-banner-container">
+            <img src="assets/img/slider_1.webp" alt="Header Banner" class="header-banner">
+        </div>
+    </header>
+
     <!-- Tìm kiếm -->
     <section class="search-section">
         <div class="search-bar bg-danger text-white py-2">
@@ -340,7 +455,6 @@
         </div>
     </section>
 
-    <!-- Banner Title -->
     <!-- Banner Title -->
     <section class="banner-title py-5">
         <div class="container">
