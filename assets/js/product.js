@@ -7,7 +7,8 @@ const productsData = [
         image: "assets/img/corolla.webp",
         year: 2019,
         seats: 5,
-        transmission: "Số sàn"
+        transmission: "Số sàn",
+        details: "Mẫu xe sedan phổ biến, tiết kiệm nhiên liệu, phù hợp cho gia đình."
     },
     {
         section: "featured",
@@ -16,7 +17,8 @@ const productsData = [
         image: "assets/img/mitsubishi-triton-4x2-at-mivec-10l-2019.webp",
         year: 2019,
         seats: 7,
-        transmission: "Tự động"
+        transmission: "Tự động",
+        details: "Xe bán tải mạnh mẽ, phù hợp cho địa hình gồ ghề."
     },
     {
         section: "featured",
@@ -25,7 +27,8 @@ const productsData = [
         image: "assets/img/nguoi-dua-tin-toyota-rush-2018-ra-mat-thai-lan-1-jpeg.webp",
         year: 2019,
         seats: 6,
-        transmission: "Tự động"
+        transmission: "Tự động",
+        details: "MPV đa dụng với thiết kế hiện đại và không gian rộng rãi."
     },
     {
         section: "featured",
@@ -34,7 +37,8 @@ const productsData = [
         image: "assets/img/toyota-avanza.webp",
         year: 2018,
         seats: 7,
-        transmission: "Số sàn"
+        transmission: "Số sàn",
+        details: "SUV nhỏ gọn, phù hợp cho cả thành phố và ngoại ô."
     },
     {
         section: "featured",
@@ -43,7 +47,8 @@ const productsData = [
         image: "assets/img/toyota-wifo.webp",
         year: 2019,
         seats: 5,
-        transmission: "Tự động"
+        transmission: "Tự động",
+        details: "Sedan cao cấp với công nghệ tiên tiến."
     },
     {
         section: "featured",
@@ -52,7 +57,8 @@ const productsData = [
         image: "assets/img/xe-toyota-vios-2018-khuyen-mai-1.webp",
         year: 2018,
         seats: 7,
-        transmission: "Số sàn"
+        transmission: "Số sàn",
+        details: "MPV gia đình với không gian rộng rãi."
     },
     {
         section: "featured",
@@ -61,7 +67,8 @@ const productsData = [
         image: "assets/img/toyota-avanza.webp",
         year: 2020,
         seats: 5,
-        transmission: "Số sàn"
+        transmission: "Số sàn",
+        details: "Hatchback tiết kiệm, phù hợp cho đô thị."
     },
     {
         section: "featured",
@@ -70,7 +77,8 @@ const productsData = [
         image: "assets/img/toyota-wifo.webp",
         year: 2019,
         seats: 5,
-        transmission: "Tự động"
+        transmission: "Tự động",
+        details: "Hatchback thể thao, thiết kế trẻ trung."
     },
     // Banner ở giữa
     {
@@ -117,7 +125,8 @@ const productsData = [
         image: "assets/img/corolla.webp",
         year: 2019,
         seats: 5,
-        transmission: "Số sàn"
+        transmission: "Số sàn",
+        details: "Mẫu xe sedan phổ biến, tiết kiệm nhiên liệu, phù hợp cho gia đình."
     },
     {
         section: "toyota",
@@ -126,7 +135,8 @@ const productsData = [
         image: "assets/img/mitsubishi-triton-4x2-at-mivec-10l-2019.webp",
         year: 2019,
         seats: 5,
-        transmission: "Tự động"
+        transmission: "Tự động",
+        details: "Sedan cao cấp với công nghệ tiên tiến."
     },
     {
         section: "toyota",
@@ -135,7 +145,8 @@ const productsData = [
         image: "assets/img/nguoi-dua-tin-toyota-rush-2018-ra-mat-thai-lan-1-jpeg.webp",
         year: 2018,
         seats: 7,
-        transmission: "Số sàn"
+        transmission: "Số sàn",
+        details: "MPV gia đình với không gian rộng rãi."
     },
     {
         section: "toyota",
@@ -144,7 +155,8 @@ const productsData = [
         image: "assets/img/toyota-avanza.webp",
         year: 2020,
         seats: 5,
-        transmission: "Số sàn"
+        transmission: "Số sàn",
+        details: "Hatchback tiết kiệm, phù hợp cho đô thị."
     },
     {
         section: "toyota",
@@ -153,7 +165,8 @@ const productsData = [
         image: "assets/img/toyota-wifo.webp",
         year: 2019,
         seats: 5,
-        transmission: "Tự động"
+        transmission: "Tự động",
+        details: "Hatchback thể thao, thiết kế trẻ trung."
     },
     {
         section: "toyota",
@@ -162,7 +175,8 @@ const productsData = [
         image: "assets/img/xe-toyota-vios-2018-khuyen-mai-1.webp",
         year: 2019,
         seats: 5,
-        transmission: "Tự động"
+        transmission: "Tự động",
+        details: "Hatchback thể thao, thiết kế trẻ trung."
     },
     // Banner Title
     {
@@ -197,26 +211,76 @@ const productsData = [
     }
 ];
 
-// Hàm render sản phẩm cho Sản phẩm nổi bật
+// Hàm render sản phẩm cho Sản phẩm nổi bật với icon và toggle
 function renderFeaturedProducts() {
     const container = document.getElementById('featured-products-container');
     const featuredProducts = productsData.filter(product => product.section === 'featured');
+    container.innerHTML = ''; // Xóa nội dung cũ
     featuredProducts.forEach(product => {
         const productHtml = `
             <div class="col-md-3 col-sm-6 mb-4">
-                <div class="product-card">
-                    <img src="${product.image}" alt="${product.name}" class="product-image">
-                    <h5 class="text-black mt-2">${product.name}</h5>
-                    <p class="text-muted">${product.price}</p>
-                    <div class="product-icons">
-                        <i class="bi bi-calendar"></i> ${product.year}
-                        <i class="bi bi-people"></i> ${product.seats} chỗ
-                        <i class="bi bi-gear"></i> ${product.transmission}
+                <div class="product-card" data-product-id="${productsData.indexOf(product)}">
+                    <div class="product-front">
+                        <img src="${product.image}" alt="${product.name}" class="product-image">
+                        <h5 class="text-black mt-2">${product.name}</h5>
+                        <p class="text-muted">${product.price}</p>
+                        <div class="product-icons">
+                            <i class="bi bi-calendar"></i> ${product.year}
+                            <i class="bi bi-people"></i> ${product.seats} chỗ
+                            <i class="bi bi-gear"></i> ${product.transmission}
+                        </div>
+                        <div class="product-icon">
+                            <i class="bi bi-blockquote-left"></i>
+                        </div>
+                    </div>
+                    <div class="product-back" style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <div class="product-details">
+                            <h5 style="color: #2c3e50;">${product.name}</h5>
+                            <p style="color: #34495e;">${product.details}</p>
+                            <p style="color: #e74c3c; font-weight: bold;">Giá: ${product.price}</p>
+                            <p style="color: #34495e;">Năm: ${product.year} | Số chỗ: ${product.seats} | Hộp số: ${product.transmission}</p>
+                            <div class="product-icon">
+                                <i class="bi bi-blockquote-left"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         `;
         container.insertAdjacentHTML('beforeend', productHtml);
+    });
+
+    // Thêm sự kiện click cho toàn bộ product-card
+    container.addEventListener('click', (e) => {
+        const icon = e.target.closest('.product-icon i');
+        if (icon) {
+            const card = icon.closest('.product-card');
+            const front = card.querySelector('.product-front');
+            const back = card.querySelector('.product-back');
+            card.classList.toggle('show-details');
+            if (card.classList.contains('show-details')) {
+                front.style.display = 'none';
+                back.style.display = 'block';
+            } else {
+                front.style.display = 'block';
+                back.style.display = 'none';
+            }
+        }
+    });
+
+    // Thêm sự kiện hover
+    document.querySelectorAll('.featured-products .product-card').forEach(card => {
+        const icon = card.querySelector('.product-icon i');
+        card.addEventListener('mouseover', () => {
+            if (!card.classList.contains('show-details')) {
+                icon.style.opacity = '1';
+            }
+        });
+        card.addEventListener('mouseout', () => {
+            if (!card.classList.contains('show-details')) {
+                icon.style.opacity = '0';
+            }
+        });
     });
 }
 
@@ -224,6 +288,7 @@ function renderFeaturedProducts() {
 function renderBanner() {
     const container = document.getElementById('banner-container');
     const bannerItems = productsData.filter(product => product.section === 'banner');
+    container.innerHTML = ''; // Xóa nội dung cũ
     bannerItems.forEach(item => {
         const bannerHtml = `
             <div class="swiper-slide">
@@ -237,26 +302,76 @@ function renderBanner() {
     });
 }
 
-// Hàm render sản phẩm Toyota
+// Hàm render sản phẩm Toyota với icon và toggle
 function renderToyotaProducts() {
     const container = document.getElementById('toyota-container');
     const toyotaProducts = productsData.filter(product => product.section === 'toyota');
+    container.innerHTML = ''; // Xóa nội dung cũ
     toyotaProducts.forEach(product => {
         const productHtml = `
             <div class="swiper-slide">
-                <div class="product-card">
-                    <img src="${product.image}" alt="${product.name}" class="img-fluid">
-                    <h5 class="text-black mt-2">${product.name}</h5>
-                    <p class="text-muted">${product.price}</p>
-                    <div class="toyota-product-icons">
-                        <i class="bi bi-calendar"></i> ${product.year}
-                        <i class="bi bi-people"></i> ${product.seats} chỗ
-                        <i class="bi bi-gear"></i> ${product.transmission}
+                <div class="product-card" data-product-id="${productsData.indexOf(product)}">
+                    <div class="product-front">
+                        <img src="${product.image}" alt="${product.name}" class="img-fluid">
+                        <h5 class="text-black mt-2">${product.name}</h5>
+                        <p class="text-muted">${product.price}</p>
+                        <div class="toyota-product-icons">
+                            <i class="bi bi-calendar"></i> ${product.year}
+                            <i class="bi bi-people"></i> ${product.seats} chỗ
+                            <i class="bi bi-gear"></i> ${product.transmission}
+                        </div>
+                        <div class="product-icon">
+                            <i class="bi bi-blockquote-left"></i>
+                        </div>
+                    </div>
+                    <div class="product-back" style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <div class="product-details">
+                            <h5 style="color: #2c3e50;">${product.name}</h5>
+                            <p style="color: #34495e;">${product.details}</p>
+                            <p style="color: #e74c3c; font-weight: bold;">Giá: ${product.price}</p>
+                            <p style="color: #34495e;">Năm: ${product.year} | Số chỗ: ${product.seats} | Hộp số: ${product.transmission}</p>
+                            <div class="product-icon">
+                                <i class="bi bi-blockquote-left"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         `;
         container.insertAdjacentHTML('beforeend', productHtml);
+    });
+
+    // Thêm sự kiện click cho toàn bộ product-card
+    container.addEventListener('click', (e) => {
+        const icon = e.target.closest('.product-icon i');
+        if (icon) {
+            const card = icon.closest('.product-card');
+            const front = card.querySelector('.product-front');
+            const back = card.querySelector('.product-back');
+            card.classList.toggle('show-details');
+            if (card.classList.contains('show-details')) {
+                front.style.display = 'none';
+                back.style.display = 'block';
+            } else {
+                front.style.display = 'block';
+                back.style.display = 'none';
+            }
+        }
+    });
+
+    // Thêm sự kiện hover
+    document.querySelectorAll('.toyota-swiper .product-card').forEach(card => {
+        const icon = card.querySelector('.product-icon i');
+        card.addEventListener('mouseover', () => {
+            if (!card.classList.contains('show-details')) {
+                icon.style.opacity = '1';
+            }
+        });
+        card.addEventListener('mouseout', () => {
+            if (!card.classList.contains('show-details')) {
+                icon.style.opacity = '0';
+            }
+        });
     });
 }
 
@@ -264,6 +379,7 @@ function renderToyotaProducts() {
 function renderBannerTitle() {
     const container = document.getElementById('banner-title-container');
     const bannerTitleItems = productsData.filter(product => product.section === 'banner-title');
+    container.innerHTML = ''; // Xóa nội dung cũ
     bannerTitleItems.forEach(item => {
         const bannerTitleHtml = `
             <div class="swiper-slide">
@@ -278,178 +394,10 @@ function renderBannerTitle() {
     });
 }
 
-// Header
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-    dropdown.addEventListener('click', (e) => {
-        e.preventDefault();
-        dropdown.classList.toggle('active');
-    });
-});
-
-// Toggle modal khi nhấn nút ☰ trên mobile
-document.querySelector('.mobile-nav-toggle').addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
-        const modal = document.querySelector('#mobile-nav-modal');
-        modal.classList.toggle('active');
-    }
-});
-
-// Đóng modal khi nhấn nút close
-document.querySelector('#modal-close').addEventListener('click', () => {
-    const modal = document.querySelector('#mobile-nav-modal');
-    modal.classList.remove('active');
-});
-
-// Đóng modal khi nhấn vào overlay
-document.querySelector('.modal-overlay').addEventListener('click', (e) => {
-    if (e.target === document.querySelector('.modal-overlay')) {
-        const modal = document.querySelector('#mobile-nav-modal');
-        modal.classList.remove('active');
-    }
-});
-
-// Toggle sub-menu for Sản Phẩm
-document.querySelector('.modal-product-toggle').addEventListener('click', (e) => {
-    e.preventDefault();
-    const dropdown = e.currentTarget.closest('.modal-dropdown');
-    const subMenu = dropdown.querySelector('.modal-sub-menu');
-    const toggleIcon = dropdown.querySelector('.toggle-icon');
-    const isActive = dropdown.classList.contains('active');
-
-    if (!isActive) {
-        subMenu.innerHTML = `
-            <li><a href="#">Hatch Back</a></li>
-            <li><a href="#">Sedan</a></li>
-            <li><a href="#">Pick Up</a></li>
-            <li><a href="#">MPV</a></li>
-            <li><a href="#">SUV</a></li>
-            <li><a href="#">Crossover</a></li>
-            <li><a href="#">Coupe - Xe Thế Thao</a></li>
-            <li><a href="#">Convertible - Xe Mui Trần</a></li>
-        `;
-        dropdown.classList.add('active');
-        toggleIcon.textContent = '-';
-    } else {
-        subMenu.innerHTML = '';
-        dropdown.classList.remove('active');
-        toggleIcon.textContent = '+';
-    }
-});
-
-// Toggle sub-menu for Tin tức
-document.querySelector('.modal-news-toggle').addEventListener('click', (e) => {
-    e.preventDefault();
-    const dropdown = e.currentTarget.closest('.modal-dropdown');
-    const subMenu = dropdown.querySelector('.modal-news-sub-menu');
-    const toggleIcon = dropdown.querySelector('.toggle-icon');
-    const isActive = dropdown.classList.contains('active');
-
-    if (!isActive) {
-        dropdown.classList.add('active');
-        toggleIcon.textContent = '-';
-    } else {
-        dropdown.classList.remove('active');
-        toggleIcon.textContent = '+';
-    }
-});
-
 document.addEventListener('DOMContentLoaded', function () {
     // Render dữ liệu cho các section
     renderFeaturedProducts();
     renderBanner();
     renderToyotaProducts();
     renderBannerTitle();
-
-    // Khởi tạo Swiper cho Toyota
-    var toyotaSwiper = new Swiper('.toyota-swiper', {
-        slidesPerView: 4,
-        spaceBetween: 24,
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-            },
-            576: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-            },
-            992: {
-                slidesPerView: 4,
-                spaceBetween: 24,
-            }
-        }
-    });
-
-    // Khởi tạo Swiper cho Banner
-    var bannerSwiper = new Swiper('.banner-swiper', {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
-        spaceBetween: 20,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        pagination: {
-            el: '.banner-swiper .swiper-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-                spaceBetween: 10,
-            },
-            576: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-                spaceBetween: 15,
-            },
-            992: {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                spaceBetween: 20,
-            },
-            1200: {
-                slidesPerView: 4,
-                slidesPerGroup: 4,
-                spaceBetween: 20,
-            }
-        }
-    });
-
-    // Khởi tạo Swiper cho Banner Title
-    var bannerTitleSwiper = new Swiper('.banner-title-swiper', {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-            },
-            576: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-            },
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            }
-        }
-    });
 });

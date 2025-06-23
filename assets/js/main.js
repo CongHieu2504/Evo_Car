@@ -37,7 +37,6 @@ document.querySelector('.modal-product-toggle').addEventListener('click', (e) =>
     const isActive = dropdown.classList.contains('active');
 
     if (!isActive) {
-        // Show sub-menu
         subMenu.innerHTML = `
             <li><a href="#">Hatch Back</a></li>
             <li><a href="#">Sedan</a></li>
@@ -51,7 +50,6 @@ document.querySelector('.modal-product-toggle').addEventListener('click', (e) =>
         dropdown.classList.add('active');
         toggleIcon.textContent = '-';
     } else {
-        // Hide sub-menu
         subMenu.innerHTML = '';
         dropdown.classList.remove('active');
         toggleIcon.textContent = '+';

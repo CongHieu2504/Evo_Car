@@ -44,7 +44,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
 }
 
-
 /* Header */
 .header {
     background-color: #ffffff;
@@ -471,9 +470,6 @@ h1, h2, h3, h4, h5, h6 {
     transition: color 0.3s ease;
 }
 
-.news-menu .dropdown-column ul li a:hover {
-    color: #ff0000;
-}
 
 /* Arrow Icon */
 .arrow-icon {
@@ -592,7 +588,6 @@ h1, h2, h3, h4, h5, h6 {
         display: none !important;
     }
 }
-
 
 /* Search Section Styling - Tìm kiếm */
 .search-section {
@@ -721,10 +716,20 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  position: relative;
+  overflow: hidden; /* Ngăn tràn màn hình */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer; /* Con trỏ chuột khi hover */
+}
+
+.featured-products .product-card:hover {
+  transform: translateY(-5px); /* Nâng nhẹ khi hover */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Tăng bóng đổ */
+  background-color: #f8f9fa; /* Thay đổi màu nền nhẹ */
 }
 
 .featured-products .product-image {
-  max-height: 350px; /* Đặt 350px trên desktop */
+  max-height: 350px;
   object-fit: contain;
   border-radius: 5px;
   width: 100%;
@@ -741,6 +746,52 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 5px;
 }
 
+.featured-products .product-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  opacity: 0; /* Ẩn icon ban đầu */
+  transition: opacity 0.3s ease;
+}
+
+.featured-products .product-card:hover .product-icon {
+  opacity: 1; /* Hiện icon khi hover */
+}
+
+.featured-products .product-front {
+  display: block;
+}
+
+.featured-products .product-back {
+  display: none;
+}
+
+.featured-products .product-card.show-details .product-front {
+  display: none; /* Ẩn mặt trước khi hiển thị chi tiết */
+}
+
+.featured-products .product-card.show-details .product-back {
+  display: block; /* Hiển thị mặt sau khi có class show-details */
+}
+
+.featured-products .product-details {
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+}
+
+.featured-products .product-details h5 {
+  margin-bottom: 10px;
+}
+
+.featured-products .product-details p {
+  margin: 5px 0;
+  color: #333;
+}
+
 /* Responsive Featured Products */
 @media (max-width: 576px) {
   .featured-products h2 {
@@ -751,7 +802,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
   }
   .featured-products .product-image {
-    max-height: 250px; /* Giữ nguyên trên mobile */
+    max-height: 250px;
+  }
+  .featured-products .product-icon {
+    font-size: 20px;
   }
 }
 
@@ -760,7 +814,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 50%;
   }
   .featured-products .product-image {
-    max-height: 200px; /* Giữ nguyên trên tablet */
+    max-height: 200px;
   }
 }
 
@@ -795,10 +849,18 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer; /* Con trỏ chuột khi hover */
+}
+
+.banner-card:hover {
+  transform: translateY(-5px); /* Nâng nhẹ khi hover */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Tăng bóng đổ */
+  background-color: #5a6078; /* Thay đổi màu nền nhẹ */
 }
 
 .banner-image {
-  max-height: 350px; /* Đặt 350px trên desktop */
+  max-height: 350px;
   object-fit: contain;
   width: 100%;
   border-radius: 5px;
@@ -813,13 +875,13 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
   }
   .banner-image {
-    max-height: 250px; /* Giữ nguyên trên mobile */
+    max-height: 250px;
   }
 }
 
 @media (min-width: 577px) and (max-width: 992px) {
   .banner-image {
-    max-height: 150px; /* Giữ nguyên trên tablet */
+    max-height: 150px;
   }
 }
 
@@ -843,6 +905,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .toyota-swiper .product-card {
@@ -850,10 +913,19 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  overflow: hidden; /* Ngăn tràn màn hình */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer; /* Con trỏ chuột khi hover */
+}
+
+.toyota-swiper .product-card:hover {
+  transform: translateY(-5px); /* Nâng nhẹ khi hover */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Tăng bóng đổ */
+  background-color: #f8f9fa; /* Thay đổi màu nền nhẹ */
 }
 
 .toyota-swiper img {
-  max-height: 350px; /* Đặt 350px trên desktop */
+  max-height: 350px;
   object-fit: contain;
   border-radius: 5px;
   width: 100%;
@@ -867,6 +939,52 @@ h1, h2, h3, h4, h5, h6 {
 
 .toyota-product-icons i {
   margin-right: 5px;
+}
+
+.toyota-swiper .product-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  opacity: 0; /* Ẩn icon ban đầu */
+  transition: opacity 0.3s ease;
+}
+
+.toyota-swiper .product-card:hover .product-icon {
+  opacity: 1; /* Hiện icon khi hover */
+}
+
+.toyota-swiper .product-front {
+  display: block;
+}
+
+.toyota-swiper .product-back {
+  display: none;
+}
+
+.toyota-swiper .product-card.show-details .product-front {
+  display: none; /* Ẩn mặt trước khi hiển thị chi tiết */
+}
+
+.toyota-swiper .product-card.show-details .product-back {
+  display: block; /* Hiển thị mặt sau khi có class show-details */
+}
+
+.toyota-swiper .product-details {
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+}
+
+.toyota-swiper .product-details h5 {
+  margin-bottom: 10px;
+}
+
+.toyota-swiper .product-details p {
+  margin: 5px 0;
+  color: #333;
 }
 
 .swiper-button-next,
@@ -897,7 +1015,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Responsive Toyota Products */
 @media (max-width: 576px) {
   .toyota-swiper img {
-    max-height: 250px; /* Giữ nguyên trên mobile */
+    max-height: 250px;
   }
   .toyota-product-icons {
     font-size: 10px;
@@ -906,11 +1024,14 @@ h1, h2, h3, h4, h5, h6 {
   .swiper-button-prev {
     display: none;
   }
+  .toyota-swiper .product-icon {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 577px) and (max-width: 992px) {
   .toyota-swiper img {
-    max-height: 250px; /* Giữ nguyên trên tablet */
+    max-height: 250px;
   }
   .toyota-swiper {
     --swiper-navigation-size: 20px;
@@ -960,6 +1081,14 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer; /* Con trỏ chuột khi hover */
+}
+
+.banner-title-card:hover {
+  transform: translateY(-5px); /* Nâng nhẹ khi hover */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Tăng bóng đổ */
+  background-color: #f8f9fa; /* Thay đổi màu nền nhẹ */
 }
 
 .banner-title-image {
@@ -971,19 +1100,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .view-all-button {
-  background-color: #000000; /* Nền đen như mẫu */
-  color: #ffffff; /* Chữ trắng */
+  background-color: #000000;
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 600;
-  border-radius: 5px; /* Bo góc như mẫu */
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .view-all-button:hover {
-  background-color: #dc3545; /* Màu đỏ khi hover */
+  background-color: #dc3545;
   color: #ffffff;
 }
 
@@ -995,7 +1124,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 10; /* Đảm bảo nút điều hướng nằm trên các phần tử khác */
+  z-index: 10;
 }
 
 .swiper-button-prev:after,
@@ -1006,7 +1135,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .swiper-pagination {
   position: relative;
-  margin-top: 10px; /* Tạo khoảng cách giữa pagination và slide */
+  margin-top: 10px;
 }
 
 .swiper-pagination-bullet {
