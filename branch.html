@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Liên hệ - Evo Car</title>
+    <title>Đại lý - Evo Car</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -14,7 +14,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -28,7 +28,7 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/register.css" rel="stylesheet">
+    <link href="assets/css/branch.css" rel="stylesheet">
 </head>
 
 <body>
@@ -148,76 +148,30 @@
         </div>
     </header>
 
-    <!-- Phần Đăng ký lái thử -->
-    <section class="test-drive-section py-5">
-        <div class="container">
-            <h2 class="text-center mb-3 text-black">ĐĂNG KÝ LÁI THỬ</h2>
-            <p class="text-center mb-5">
-                Điền vào mẫu dưới đây và gửi yêu cầu của bạn. Đại lý Evo Car của chúng tôi sẽ liên hệ với bạn để xác
-                nhận ngày và thời gian đăng ký lái thử của bạn.
-            </p>
+    <!-- Nội dung -->
+    <section class="store-locator">
+        <div class="store-search">
+            <select id="province-select" class="form-select mb-4" aria-label="Chọn tỉnh/thành phố">
+                <option value="">Chọn tỉnh/thành phố</option>
+                <option value="hcm">Hồ Chí Minh</option>
+                <option value="hanoi">Hà Nội</option>
+                <!-- Thêm các tỉnh khác nếu cần -->
+            </select>
+        </div>
 
-            <form action="#" method="post">
-                <!-- Thông tin xe -->
-                <div class="mb-4">
-                    <h5>THÔNG TIN XE</h5>
-                    <div class="form-group">
-                        <label for="car-model">CHỌN DÒNG XE<span class="text-danger">*</span></label>
-                        <select class="form-control" id="car-model" required>
-                            <option value="">-- Chọn dòng xe --</option>
-                            <option value="i10">Hyundai i10</option>
-                            <option value="morning">KIA Morning</option>
-                            <option value="focus">Ford Focus</option>
-                            <option value="focus">Toyota Yaris</option>
-                        </select>
-                    </div>
-                </div>
+        <div class="store-content">
+            <!-- Danh sách cửa hàng -->
+            <div class="store-sidebar" id="store-list">
+                <!-- Danh sách địa chỉ sẽ được thêm bằng JavaScript -->
+            </div>
 
-                <!-- Thông tin liên hệ -->
-                <div class="mb-4">
-                    <h5>THÔNG TIN LIÊN HỆ</h5>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="name">HỌ VÀ TÊN<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" placeholder="Nhập họ và tên" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="phone">ĐIỆN THOẠI<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại"
-                                required>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="email">EMAIL</label>
-                            <input type="email" class="form-control" id="email" placeholder="Nhập địa chỉ Email">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="location">ĐĂNG KÝ LÁI THỬ TẠI<span class="text-danger">*</span></label>
-                            <select class="form-control" id="location" required>
-                                <option value="">-- Chọn đại lý --</option>
-                                <option value="danang">Đà Nẵng</option>
-                                <option value="hcm">Hồ Chí Minh</option>
-                                <option value="hanoi">Hà Nội</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group mb-4">
-                        <label for="message">NỘI DUNG<span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Nội dung liên hệ"
-                            required></textarea>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-dark px-5 py-2">Gửi ĐĂNG KÝ</button>
-                    </div>
-                </div>
-            </form>
+            <!-- Bản đồ -->
+            <div class="store-map">
+                <iframe id="map-frame" src="" width="100%" height="450" style="border:0;" allowfullscreen=""
+                    loading="lazy"></iframe>
+            </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer id="footer" class="footer">
@@ -289,6 +243,58 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/product.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        // Dữ liệu địa chỉ
+        const branches = {
+            hcm: [
+                { name: "70 Lữ Gia, Quận 11, TP.HCM", phone: "0905 123 456", hours: "8:00 - 17:00", query: "70+Lữ+Gia,+Quận+11,+TP.HCM" },
+                { name: "138A Đ. Tô Hiến Thành, Quận 10, TP.HCM", phone: "0905 234 567", hours: "8:00 - 17:00", query: "138A+Tô+Hiến+Thành,+Quận+10,+TP.HCM" },
+                { name: "215A Lý Thường Kiệt, Quận 11, TP.HCM", phone: "0905 345 678", hours: "8:00 - 17:00", query: "215A+Lý+Thường+Kiệt,+Quận+11,+TP.HCM" },
+                { name: "584 Âu Cơ, Quận Tân Bình, TP.HCM", phone: "0905 456 789", hours: "8:00 - 17:00", query: "584+Âu+Cơ,+Quận+Tân+Bình,+TP.HCM" },
+                { name: "615A Âu Cơ, Quận Tân Phú, TP.HCM", phone: "0905 567 890", hours: "8:00 - 17:00", query: "615A+Âu+Cơ,+Quận+Tân+Phú,+TP.HCM" }
+            ],
+            hanoi: [
+                { name: "266 Đội Cấn, Ba Đình, Hà Nội", phone: "0905 678 901", hours: "8:00 - 17:00", query: "266+Đội+Cấn,+Ba+Đình,+Hà+Nội" },
+                { name: "1 Phạm Văn Đồng, Cầu Giấy, Hà Nội", phone: "0905 789 012", hours: "8:00 - 17:00", query: "1+Phạm+Văn+Đồng,+Cầu+Giấy,+Hà+Nội" }
+            ]
+        };
+
+        // Tham chiếu các phần tử
+        const provinceSelect = document.getElementById('province-select');
+        const storeList = document.getElementById('store-list');
+        const mapFrame = document.getElementById('map-frame');
+
+        // Hàm cập nhật danh sách địa chỉ
+        function updateBranchList(province) {
+            storeList.innerHTML = '';
+            if (branches[province]) {
+                branches[province].forEach(branch => {
+                    const div = document.createElement('div');
+                    div.className = 'store-item';
+                    div.innerHTML = `
+                        <strong>${branch.name}</strong>
+                        <p>SĐT: ${branch.phone}</p>
+                        <p>Giờ mở cửa: ${branch.hours}</p>
+                    `;
+                    div.addEventListener('click', () => {
+                        mapFrame.src = `https://www.google.com/maps?q=${branch.query}&output=embed`;
+                        document.querySelectorAll('.store-item').forEach(item => item.classList.remove('active'));
+                        div.classList.add('active');
+                    });
+                    storeList.appendChild(div);
+                });
+            }
+        }
+
+        // Sự kiện khi chọn tỉnh/thành phố
+        provinceSelect.addEventListener('change', function () {
+            updateBranchList(this.value);
+            mapFrame.src = ''; // Xóa bản đồ khi thay đổi tỉnh
+        });
+
+        // Khởi tạo với địa điểm mặc định (nếu có)
+        updateBranchList('hcm');
+    </script>
 </body>
 
 </html>
