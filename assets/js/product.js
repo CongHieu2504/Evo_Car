@@ -213,189 +213,229 @@ const productsData = [
 
 // Hàm render sản phẩm cho Sản phẩm nổi bật với icon và toggle
 function renderFeaturedProducts() {
-    const container = document.getElementById('featured-products-container');
-    const featuredProducts = productsData.filter(product => product.section === 'featured');
-    container.innerHTML = ''; // Xóa nội dung cũ
-    featuredProducts.forEach(product => {
-        const productHtml = `
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="product-card" data-product-id="${productsData.indexOf(product)}">
-                    <div class="product-front">
-                        <img src="${product.image}" alt="${product.name}" class="product-image">
-                        <h5 class="text-black mt-2">${product.name}</h5>
-                        <p class="text-muted">${product.price}</p>
-                        <div class="product-icons">
-                            <i class="bi bi-calendar"></i> ${product.year}
-                            <i class="bi bi-people"></i> ${product.seats} chỗ
-                            <i class="bi bi-gear"></i> ${product.transmission}
-                        </div>
-                        <div class="product-icon">
-                            <i class="bi bi-blockquote-left"></i>
-                        </div>
-                    </div>
-                    <div class="product-back" style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                        <div class="product-details">
-                            <h5 style="color: #2c3e50;">${product.name}</h5>
-                            <p style="color: #34495e;">${product.details}</p>
-                            <p style="color: #e74c3c; font-weight: bold;">Giá: ${product.price}</p>
-                            <p style="color: #34495e;">Năm: ${product.year} | Số chỗ: ${product.seats} | Hộp số: ${product.transmission}</p>
+    if (document.getElementById('featured-products-container')) {
+        const container = document.getElementById('featured-products-container');
+        const featuredProducts = productsData.filter(product => product.section === 'featured');
+        container.innerHTML = '';
+        featuredProducts.forEach((product, index) => {
+            const productHtml = `
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card" data-product-id="${index}">
+                        <div class="product-front">
+                            <img src="${product.image}" alt="${product.name}" class="product-image">
+                            <h5 class="text-black mt-2">${product.name}</h5>
+                            <p class="text-muted">${product.price}</p>
+                            <div class="product-icons">
+                                <i class="bi bi-calendar"></i> ${product.year}
+                                <i class="bi bi-people"></i> ${product.seats} chỗ
+                                <i class="bi bi-gear"></i> ${product.transmission}
+                            </div>
                             <div class="product-icon">
                                 <i class="bi bi-blockquote-left"></i>
                             </div>
                         </div>
+                        <div class="product-back" style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: none;">
+                            <div class="product-details">
+                                <h5 style="color: #2c3e50;">${product.name}</h5>
+                                <p style="color: #34495e;">${product.details}</p>
+                                <p style="color: #e74c3c; font-weight: bold;">Giá: ${product.price}</p>
+                                <p style="color: #34495e;">Năm: ${product.year} | Số chỗ: ${product.seats} | Hộp số: ${product.transmission}</p>
+                                <div class="product-icon">
+                                    <i class="bi bi-blockquote-left"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
-        container.insertAdjacentHTML('beforeend', productHtml);
-    });
+            `;
+            container.insertAdjacentHTML('beforeend', productHtml);
+        });
 
-    // Thêm sự kiện click cho toàn bộ product-card
-    container.addEventListener('click', (e) => {
-        const icon = e.target.closest('.product-icon i');
-        if (icon) {
-            const card = icon.closest('.product-card');
-            const front = card.querySelector('.product-front');
-            const back = card.querySelector('.product-back');
-            card.classList.toggle('show-details');
-            if (card.classList.contains('show-details')) {
-                front.style.display = 'none';
-                back.style.display = 'block';
-            } else {
-                front.style.display = 'block';
-                back.style.display = 'none';
-            }
-        }
-    });
-
-    // Thêm sự kiện hover
-    document.querySelectorAll('.featured-products .product-card').forEach(card => {
-        const icon = card.querySelector('.product-icon i');
-        card.addEventListener('mouseover', () => {
-            if (!card.classList.contains('show-details')) {
-                icon.style.opacity = '1';
+        // Thêm sự kiện click cho icon toggle
+        container.addEventListener('click', (e) => {
+            const icon = e.target.closest('.product-icon i');
+            if (icon) {
+                const card = icon.closest('.product-card');
+                const front = card.querySelector('.product-front');
+                const back = card.querySelector('.product-back');
+                card.classList.toggle('show-details');
+                if (card.classList.contains('show-details')) {
+                    front.style.display = 'none';
+                    back.style.display = 'block';
+                } else {
+                    front.style.display = 'block';
+                    back.style.display = 'none';
+                }
+                e.stopPropagation();
             }
         });
-        card.addEventListener('mouseout', () => {
-            if (!card.classList.contains('show-details')) {
-                icon.style.opacity = '0';
+
+        // Thêm sự kiện click để chuyển hướng với ID
+        container.addEventListener('click', (e) => {
+            const card = e.target.closest('.product-card');
+            if (card && !e.target.closest('.product-icon')) {
+                const productId = card.getAttribute('data-product-id');
+                const product = productsData[parseInt(productId)];
+                console.log('Product saved to localStorage:', product);
+                if (product) {
+                    localStorage.setItem('selectedProduct', JSON.stringify(product));
+                    window.location.href = `product-detail.html?id=${productId}`;
+                } else {
+                    console.error('Product not found for id:', productId);
+                }
             }
         });
-    });
+
+        // Thêm sự kiện hover
+        document.querySelectorAll('.featured-products .product-card').forEach(card => {
+            const icon = card.querySelector('.product-icon i');
+            card.addEventListener('mouseover', () => {
+                if (!card.classList.contains('show-details')) {
+                    icon.style.opacity = '1';
+                }
+            });
+            card.addEventListener('mouseout', () => {
+                if (!card.classList.contains('show-details')) {
+                    icon.style.opacity = '0';
+                }
+            });
+        });
+    }
 }
 
-// Hàm render banner ở giữa
-function renderBanner() {
-    const container = document.getElementById('banner-container');
-    const bannerItems = productsData.filter(product => product.section === 'banner');
-    container.innerHTML = ''; // Xóa nội dung cũ
-    bannerItems.forEach(item => {
-        const bannerHtml = `
-            <div class="swiper-slide">
-                <div class="banner-card">
-                    <img src="${item.image}" alt="${item.name}" class="banner-image">
-                    <p class="text-white mt-2">${item.description}</p>
-                </div>
-            </div>
-        `;
-        container.insertAdjacentHTML('beforeend', bannerHtml);
-    });
-}
+// (Giữ nguyên renderBanner, renderToyotaProducts, renderBannerTitle, chỉ cập nhật chuyển hướng trong renderToyotaProducts)
 
-// Hàm render sản phẩm Toyota với icon và toggle
 function renderToyotaProducts() {
-    const container = document.getElementById('toyota-container');
-    const toyotaProducts = productsData.filter(product => product.section === 'toyota');
-    container.innerHTML = ''; // Xóa nội dung cũ
-    toyotaProducts.forEach(product => {
-        const productHtml = `
-            <div class="swiper-slide">
-                <div class="product-card" data-product-id="${productsData.indexOf(product)}">
-                    <div class="product-front">
-                        <img src="${product.image}" alt="${product.name}" class="img-fluid">
-                        <h5 class="text-black mt-2">${product.name}</h5>
-                        <p class="text-muted">${product.price}</p>
-                        <div class="toyota-product-icons">
-                            <i class="bi bi-calendar"></i> ${product.year}
-                            <i class="bi bi-people"></i> ${product.seats} chỗ
-                            <i class="bi bi-gear"></i> ${product.transmission}
-                        </div>
-                        <div class="product-icon">
-                            <i class="bi bi-blockquote-left"></i>
-                        </div>
-                    </div>
-                    <div class="product-back" style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                        <div class="product-details">
-                            <h5 style="color: #2c3e50;">${product.name}</h5>
-                            <p style="color: #34495e;">${product.details}</p>
-                            <p style="color: #e74c3c; font-weight: bold;">Giá: ${product.price}</p>
-                            <p style="color: #34495e;">Năm: ${product.year} | Số chỗ: ${product.seats} | Hộp số: ${product.transmission}</p>
+    if (document.getElementById('toyota-container')) {
+        const container = document.getElementById('toyota-container');
+        const toyotaProducts = productsData.filter(product => product.section === 'toyota');
+        container.innerHTML = '';
+        toyotaProducts.forEach((product, index) => {
+            const productHtml = `
+                <div class="swiper-slide">
+                    <div class="product-card" data-product-id="${index}">
+                        <div class="product-front">
+                            <img src="${product.image}" alt="${product.name}" class="img-fluid">
+                            <h5 class="text-black mt-2">${product.name}</h5>
+                            <p class="text-muted">${product.price}</p>
+                            <div class="toyota-product-icons">
+                                <i class="bi bi-calendar"></i> ${product.year}
+                                <i class="bi bi-people"></i> ${product.seats} chỗ
+                                <i class="bi bi-gear"></i> ${product.transmission}
+                            </div>
                             <div class="product-icon">
                                 <i class="bi bi-blockquote-left"></i>
                             </div>
                         </div>
+                        <div class="product-back" style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: none;">
+                            <div class="product-details">
+                                <h5 style="color: #2c3e50;">${product.name}</h5>
+                                <p style="color: #34495e;">${product.details}</p>
+                                <p style="color: #e74c3c; font-weight: bold;">Giá: ${product.price}</p>
+                                <p style="color: #34495e;">Năm: ${product.year} | Số chỗ: ${product.seats} | Hộp số: ${product.transmission}</p>
+                                <div class="product-icon">
+                                    <i class="bi bi-blockquote-left"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
-        container.insertAdjacentHTML('beforeend', productHtml);
-    });
+            `;
+            container.insertAdjacentHTML('beforeend', productHtml);
+        });
 
-    // Thêm sự kiện click cho toàn bộ product-card
-    container.addEventListener('click', (e) => {
-        const icon = e.target.closest('.product-icon i');
-        if (icon) {
-            const card = icon.closest('.product-card');
-            const front = card.querySelector('.product-front');
-            const back = card.querySelector('.product-back');
-            card.classList.toggle('show-details');
-            if (card.classList.contains('show-details')) {
-                front.style.display = 'none';
-                back.style.display = 'block';
-            } else {
-                front.style.display = 'block';
-                back.style.display = 'none';
-            }
-        }
-    });
-
-    // Thêm sự kiện hover
-    document.querySelectorAll('.toyota-swiper .product-card').forEach(card => {
-        const icon = card.querySelector('.product-icon i');
-        card.addEventListener('mouseover', () => {
-            if (!card.classList.contains('show-details')) {
-                icon.style.opacity = '1';
+        // Thêm sự kiện click cho icon toggle
+        container.addEventListener('click', (e) => {
+            const icon = e.target.closest('.product-icon i');
+            if (icon) {
+                const card = icon.closest('.product-card');
+                const front = card.querySelector('.product-front');
+                const back = card.querySelector('.product-back');
+                card.classList.toggle('show-details');
+                if (card.classList.contains('show-details')) {
+                    front.style.display = 'none';
+                    back.style.display = 'block';
+                } else {
+                    front.style.display = 'block';
+                    back.style.display = 'none';
+                }
+                e.stopPropagation();
             }
         });
-        card.addEventListener('mouseout', () => {
-            if (!card.classList.contains('show-details')) {
-                icon.style.opacity = '0';
+
+        // Thêm sự kiện click để chuyển hướng với ID
+        container.addEventListener('click', (e) => {
+            const card = e.target.closest('.product-card');
+            if (card && !e.target.closest('.product-icon')) {
+                const productId = card.getAttribute('data-product-id');
+                const product = productsData[parseInt(productId)];
+                console.log('Product saved to localStorage:', product);
+                if (product) {
+                    localStorage.setItem('selectedProduct', JSON.stringify(product));
+                    window.location.href = `product-detail.html?id=${productId}`;
+                } else {
+                    console.error('Product not found for id:', productId);
+                }
             }
         });
-    });
+
+        // Thêm sự kiện hover
+        document.querySelectorAll('.toyota-swiper .product-card').forEach(card => {
+            const icon = card.querySelector('.product-icon i');
+            card.addEventListener('mouseover', () => {
+                if (!card.classList.contains('show-details')) {
+                    icon.style.opacity = '1';
+                }
+            });
+            card.addEventListener('mouseout', () => {
+                if (!card.classList.contains('show-details')) {
+                    icon.style.opacity = '0';
+                }
+            });
+        });
+    }
 }
 
-// Hàm render Banner Title
-function renderBannerTitle() {
-    const container = document.getElementById('banner-title-container');
-    const bannerTitleItems = productsData.filter(product => product.section === 'banner-title');
-    container.innerHTML = ''; // Xóa nội dung cũ
-    bannerTitleItems.forEach(item => {
-        const bannerTitleHtml = `
-            <div class="swiper-slide">
-                <div class="banner-title-card">
-                    <img src="${item.image}" alt="${item.name}" class="banner-title-image">
-                    <h5 class="text-black mt-2">${item.name}</h5>
-                    <p class="text-black mt-2">${item.description}</p>
+function renderBanner() {
+    if (document.getElementById('banner-container')) {
+        const container = document.getElementById('banner-container');
+        const bannerItems = productsData.filter(product => product.section === 'banner');
+        container.innerHTML = '';
+        bannerItems.forEach(item => {
+            const bannerHtml = `
+                <div class="swiper-slide">
+                    <div class="banner-card">
+                        <img src="${item.image}" alt="${item.name}" class="banner-image">
+                        <p class="text-white mt-2">${item.description}</p>
+                    </div>
                 </div>
-            </div>
-        `;
-        container.insertAdjacentHTML('beforeend', bannerTitleHtml);
-    });
+            `;
+            container.insertAdjacentHTML('beforeend', bannerHtml);
+        });
+    }
+}
+
+function renderBannerTitle() {
+    if (document.getElementById('banner-title-container')) {
+        const container = document.getElementById('banner-title-container');
+        const bannerTitleItems = productsData.filter(product => product.section === 'banner-title');
+        container.innerHTML = '';
+        bannerTitleItems.forEach(item => {
+            const bannerTitleHtml = `
+                <div class="swiper-slide">
+                    <div class="banner-title-card">
+                        <img src="${item.image}" alt="${item.name}" class="banner-title-image">
+                        <h5 class="text-black mt-2">${item.name}</h5>
+                        <p class="text-black mt-2">${item.description}</p>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', bannerTitleHtml);
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Render dữ liệu cho các section
     renderFeaturedProducts();
     renderBanner();
     renderToyotaProducts();
