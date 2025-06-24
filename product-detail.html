@@ -78,6 +78,123 @@
                 margin-top: 20px;
             }
         }
+
+        /* Exterior Section Styling - Ngoại thất */
+        .exterior-section {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+            margin-top: 20px;
+        }
+
+        .exterior-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .exterior-description {
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .exterior-gallery {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .swiper-slide img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #dc3545;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 767px) {
+            .exterior-gallery .swiper-slide img {
+                max-height: 150px;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                display: none;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .exterior-gallery .swiper-slide img {
+                max-height: 180px;
+            }
+        }
+
+        /* Thêm style cho menu điều hướng */
+        .nav-detail {
+            width: 100%;
+            background-color: #fff;
+            padding: 10px 0;
+            margin-top: 20px;
+            /* Khoảng cách từ header */
+        }
+
+        .nav-detail ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .nav-detail ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-detail ul li a:hover {
+            color: #dc3545;
+        }
+
+        @media (max-width: 768px) {
+            .nav-detail ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-detail ul li {
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 
@@ -198,8 +315,19 @@
         </div>
     </header>
 
-    <!-- Product Detail Section -->
-    <section class="product-detail">
+    <!-- Menu điều hướng chi tiết -->
+    <nav class="nav-detail">
+        <ul>
+            <li><a href="#overview">Tổng quan</a></li>
+            <li><a href="#exterior">Ngoại thất</a></li>
+            <li><a href="#interior">Nội thất</a></li>
+            <li><a href="#specifications">Thông số kỹ thuật</a></li>
+            <li><a href="#cost">Dự tính chi phí</a></li>
+        </ul>
+    </nav>
+
+    <!-- Product Detail Section - Tổng quan -->
+    <section class="product-detail" id="overview">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -223,6 +351,111 @@
                             6750</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exterior Section - Ngoại thất -->
+    <section class="exterior-section" id="exterior">
+        <div class="container">
+            <div class="row">
+                <!-- Thông tin sản phẩm bên trái -->
+                <div class="col-md-6">
+                    <h3 class="exterior-title">NGOẠI THẤT</h3>
+                    <p class="exterior-description">
+                        Thể hiện sự mạnh mẽ và cá tính của Triton mang đậm chất dòng xe bán tải với những đường nét nổi
+                        bật, kích thước không gian nội thất rộng rãi, khoang hành lý chứa đồ lớn (hơn 1.000 lít), khả
+                        năng lội nước sâu đến 700 mm và chinh phục mọi địa hình gồ ghề, vượt trội hơn cả
+                        (Jaw-dropping!).
+                    </p>
+                </div>
+                <!-- Ảnh chính bên phải -->
+                <div class="col-md-6">
+                    <img src="" alt="Main Exterior Image" class="product-image" id="mainExteriorImage">
+                </div>
+            </div>
+            <!-- Gallery ảnh liên quan bên dưới -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="exterior-gallery">
+                        <div class="swiper exterior-swiper">
+                            <div class="swiper-wrapper" id="exteriorGallery">
+                                <!-- Hình ảnh sẽ được render động bởi JavaScript -->
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interior Section - Nội thất -->
+    <section class="interior-section" id="interior">
+        <div class="container">
+            <div class="row">
+                <!-- Ảnh chính bên trái -->
+                <div class="col-md-6">
+                    <img src="" alt="Main Interior Image" class="product-image" id="mainInteriorImage">
+                </div>
+                <!-- Thông tin nội thất bên phải -->
+                <div class="col-md-6">
+                    <h3 class="interior-title">NỘI THẤT</h3>
+                    <p class="interior-description">
+                        Mitsubishi Triton mang đến không gian nội thất rộng rãi với chất liệu da cao cấp, tích hợp các
+                        tính năng hiện đại như màn hình cảm ứng, điều hòa tự động và hệ thống giải trí đa phương tiện.
+                        Xe được thiết kế để mang lại sự thoải mái tối đa cho người lái.
+                    </p>
+                </div>
+            </div>
+            <!-- Gallery ảnh liên quan bên dưới -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="interior-gallery">
+                        <div class="swiper interior-swiper">
+                            <div class="swiper-wrapper" id="interiorGallery">
+                                <!-- Hình ảnh sẽ được render động bởi JavaScript -->
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spec Section - Thông số kỹ thuật -->
+    <section class="spec-section" id="specifications">
+        <div class="container">
+            <h3 class="spec-title">THÔNG SỐ KỸ THUẬT</h3>
+            <div class="spec-content" id="specContent">
+                <!-- Nội dung sẽ được render động -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Section - Dự tính chi phí -->
+    <section class="cost-section" id="cost">
+        <div class="container">
+            <h3 class="cost-title">DỰ TÍNH CHI PHÍ</h3>
+            <div class="cost-content">
+                <div class="cost-selection">
+                    <label for="regionSelect">Chọn tỉnh/thành phố:</label>
+                    <select id="regionSelect" class="form-control">
+                        <!-- Options sẽ được thêm động -->
+                    </select>
+                </div>
+                <ul class="cost-details">
+                    <li><strong>Giá xe cơ bản:</strong> <span id="basePrice"></span></li>
+                    <li><strong>Phí đăng ký:</strong> <span id="registrationFee">0 VND</span></li>
+                    <li><strong>Phí bảo hiểm:</strong> <span id="insuranceFee">0 VND</span></li>
+                    <li><strong>Giá đàm phán:</strong> <span id="negotiablePrice">0 VND</span></li>
+                    <li class="cost-total"><strong>Tổng cộng:</strong> <span id="totalCost">0 VND</span></li>
+                </ul>
+                <p class="cost-note"><strong>Lưu ý:</strong> Giá có thể thay đổi tùy theo chính sách đại lý và chương
+                    trình khuyến mãi.</p>
             </div>
         </div>
     </section>
@@ -309,7 +542,6 @@
                 productData = null;
             }
 
-            // Kiểm tra URL fallback
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
             const product = productData ? JSON.parse(productData) : (productId !== null ? productsData[parseInt(productId)] : null);
@@ -327,6 +559,88 @@
                     mainImage.alt = product.name || 'Product Image';
                     console.log('Image src set to:', mainImage.src);
                 }
+
+                // Render ảnh chính cho Ngoại thất
+                const mainExteriorImage = document.getElementById('mainExteriorImage');
+                if (mainExteriorImage) {
+                    mainExteriorImage.src = product.image || 'assets/img/mitsubishi-triton-4x2-at-mivec-10l-2019.webp';
+                    mainExteriorImage.alt = `${product.name} Main Exterior`;
+                }
+
+                // Render gallery ngoại thất với Swiper
+                const exteriorGallery = document.getElementById('exteriorGallery');
+                if (exteriorGallery) {
+                    const baseExteriorImage = product.image || 'assets/img/mitsubishi-triton-4x2-at-mivec-10l-2019.webp';
+                    const exteriorImageCount = 5;
+                    const exteriorImages = Array(exteriorImageCount).fill(baseExteriorImage);
+                    exteriorGallery.innerHTML = exteriorImages.map((img, index) => `
+                    <div class="swiper-slide"><img src="${img}" alt="${product.name} Exterior ${index + 1}" class="img-fluid"></div>
+                `).join('');
+                    new Swiper('.exterior-swiper', {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                        loop: true,
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        breakpoints: {
+                            576: {
+                                slidesPerView: 2,
+                                spaceBetween: 15,
+                            },
+                            768: {
+                                slidesPerView: 3,
+                                spaceBetween: 20,
+                            },
+                            992: {
+                                slidesPerView: 4,
+                                spaceBetween: 25,
+                            }
+                        }
+                    });
+                }
+
+                // Render ảnh chính cho Nội thất
+                const mainInteriorImage = document.getElementById('mainInteriorImage');
+                if (mainInteriorImage) {
+                    mainInteriorImage.src = product.image || 'assets/img/interior-placeholder.jpg';
+                    mainInteriorImage.alt = `${product.name} Main Interior`;
+                }
+
+                // Render gallery nội thất với Swiper
+                const interiorGallery = document.getElementById('interiorGallery');
+                if (interiorGallery) {
+                    const baseInteriorImage = product.image || 'assets/img/interior-placeholder.jpg';
+                    const interiorImageCount = 5;
+                    const interiorImages = Array(interiorImageCount).fill(baseInteriorImage);
+                    interiorGallery.innerHTML = interiorImages.map((img, index) => `
+                    <div class="swiper-slide"><img src="${img}" alt="${product.name} Interior ${index + 1}" class="img-fluid"></div>
+                `).join('');
+                    new Swiper('.interior-swiper', {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                        loop: true,
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        breakpoints: {
+                            576: {
+                                slidesPerView: 2,
+                                spaceBetween: 15,
+                            },
+                            768: {
+                                slidesPerView: 3,
+                                spaceBetween: 20,
+                            },
+                            992: {
+                                slidesPerView: 4,
+                                spaceBetween: 25,
+                            }
+                        }
+                    });
+                }
             } else {
                 console.error('No valid product data found');
                 document.querySelector('.product-info').innerHTML = '<h2>Không tìm thấy thông tin sản phẩm</h2>';
@@ -335,7 +649,187 @@
                     mainImage.src = 'assets/img/placeholder.jpg';
                     mainImage.alt = 'Placeholder Image';
                 }
+                const mainExteriorImage = document.getElementById('mainExteriorImage');
+                if (mainExteriorImage) {
+                    mainExteriorImage.src = 'assets/img/mitsubishi-triton-4x2-at-mivec-10l-2019.webp';
+                    mainExteriorImage.alt = 'Placeholder Exterior';
+                }
+                const exteriorGallery = document.getElementById('exteriorGallery');
+                if (exteriorGallery) {
+                    const fallbackExteriorImages = Array(4).fill('assets/img/mitsubishi-triton-4x2-at-mivec-10l-2019.webp');
+                    exteriorGallery.innerHTML = fallbackExteriorImages.map((img, index) => `
+                    <div class="swiper-slide"><img src="${img}" alt="Placeholder Exterior ${index + 1}" class="img-fluid"></div>
+                `).join('');
+                    new Swiper('.exterior-swiper', {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        loop: true,
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        breakpoints: {
+                            576: {
+                                slidesPerView: 2,
+                                spaceBetween: 15,
+                            },
+                            768: {
+                                slidesPerView: 3,
+                                spaceBetween: 20,
+                            },
+                            992: {
+                                slidesPerView: 4,
+                                spaceBetween: 25,
+                            }
+                        }
+                    });
+                }
+                // Render ảnh chính cho Nội thất
+                const mainInteriorImage = document.getElementById('mainInteriorImage');
+                if (mainInteriorImage) {
+                    mainInteriorImage.src = product.image || 'assets/img/interior-placeholder.jpg';
+                    mainInteriorImage.alt = `${product.name} Main Interior`;
+                }
+
+                // Render gallery nội thất với Swiper
+                const interiorGallery = document.getElementById('interiorGallery');
+                if (interiorGallery) {
+                    const baseInteriorImage = product.image || 'assets/img/interior-placeholder.jpg';
+                    const interiorImageCount = 5;
+                    const interiorImages = Array(interiorImageCount).fill(baseInteriorImage);
+                    interiorGallery.innerHTML = interiorImages.map((img, index) => `
+        <div class="swiper-slide"><img src="${img}" alt="${product.name} Interior ${index + 1}" class="img-fluid"></div>
+    `).join('');
+                    new Swiper('.interior-swiper', {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                        loop: true,
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        breakpoints: {
+                            576: {
+                                slidesPerView: 2,
+                                spaceBetween: 15,
+                            },
+                            768: {
+                                slidesPerView: 3,
+                                spaceBetween: 20,
+                            },
+                            992: {
+                                slidesPerView: 4,
+                                spaceBetween: 25,
+                            }
+                        }
+                    });
+                }
             }
+
+            // Thêm logic scroll cho menu điều hướng
+            document.querySelectorAll('.nav-detail a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+
+    <script type="module">
+        // Import dữ liệu từ data.js
+        import { productData } from './assets/js/data.js';
+
+        // Hàm render Thông số kỹ thuật
+        function renderSpecifications() {
+            const specContent = document.getElementById("specContent");
+            if (!specContent) {
+                console.error("Element specContent not found!");
+                return;
+            }
+            const specs = productData.specifications["Mitsubishi Triton 2025"];
+            if (!specs) {
+                console.error("Specifications data not found for Mitsubishi Triton 2025!");
+                specContent.innerHTML = "<p>Không tìm thấy dữ liệu thông số kỹ thuật.</p>";
+                return;
+            }
+            specContent.innerHTML = `
+            <div class="spec-item">
+                <h4>Thông số cơ bản</h4>
+                <ul>
+                    <li><strong>Loại động cơ:</strong> ${specs.basic.engineType}</li>
+                    <li><strong>Dung tích xy-lanh:</strong> ${specs.basic.displacement}</li>
+                    <li><strong>Hộp số:</strong> ${specs.basic.transmission}</li>
+                    <li><strong>Kích thước (D x R x C):</strong> ${specs.basic.dimensions}</li>
+                    <li><strong>Trọng lượng:</strong> ${specs.basic.weight}</li>
+                </ul>
+            </div>
+            <div class="spec-item">
+                <h4>Thông số hiệu suất</h4>
+                <ul>
+                    <li><strong>Công suất tối đa:</strong> ${specs.performance.maxPower}</li>
+                    <li><strong>Mô-men xoắn cực đại:</strong> ${specs.performance.maxTorque}</li>
+                    <li><strong>Tốc độ tối đa:</strong> ${specs.performance.topSpeed}</li>
+                    <li><strong>Mức tiêu hao nhiên liệu:</strong> ${specs.performance.fuelConsumption}</li>
+                </ul>
+            </div>
+            <div class="spec-item">
+                <h4>Thông số an toàn</h4>
+                <ul>
+                    <li><strong>Hệ thống phanh:</strong> ${specs.safety.brakeSystem}</li>
+                    <li><strong>Kiểm soát lực kéo:</strong> ${specs.safety.tractionControl}</li>
+                    <li><strong>Túi khí:</strong> ${specs.safety.airbags}</li>
+                    <li><strong>Hệ thống hỗ trợ:</strong> ${specs.safety.supportSystems}</li>
+                </ul>
+            </div>
+        `;
+        }
+
+        // Hàm render và cập nhật Dự tính chi phí
+        function updateCost() {
+            const select = document.getElementById("regionSelect");
+            const basePrice = document.getElementById("basePrice");
+            const registrationFee = document.getElementById("registrationFee");
+            const insuranceFee = document.getElementById("insuranceFee");
+            const negotiablePrice = document.getElementById("negotiablePrice");
+            const totalCost = document.getElementById("totalCost");
+
+            // Đặt giá cơ bản
+            basePrice.textContent = productData.costEstimates.basePriceRange;
+
+            // Thêm options vào dropdown
+            select.innerHTML = '<option value="">Chọn tỉnh/thành phố</option>';
+            productData.costEstimates.regions.forEach(region => {
+                const option = document.createElement("option");
+                option.value = region.name;
+                option.textContent = region.name;
+                select.appendChild(option);
+            });
+
+            // Xử lý khi chọn vùng miền
+            select.addEventListener("change", function () {
+                const selectedRegion = productData.costEstimates.regions.find(r => r.name === this.value);
+                if (selectedRegion) {
+                    registrationFee.textContent = selectedRegion.registrationFee.toLocaleString() + " VND";
+                    insuranceFee.textContent = selectedRegion.insuranceFee.toLocaleString() + " VND";
+                    negotiablePrice.textContent = selectedRegion.negotiablePrice.toLocaleString() + " VND";
+                    const total = selectedRegion.registrationFee + selectedRegion.insuranceFee + selectedRegion.negotiablePrice;
+                    totalCost.textContent = total.toLocaleString() + " VND";
+                } else {
+                    registrationFee.textContent = "0 VND";
+                    insuranceFee.textContent = "0 VND";
+                    negotiablePrice.textContent = "0 VND";
+                    totalCost.textContent = "0 VND";
+                }
+            });
+        }
+
+        // Chạy hàm khi trang tải
+        document.addEventListener("DOMContentLoaded", () => {
+            renderSpecifications();
+            updateCost();
+            console.log("Data loaded:", productData); // Kiểm tra dữ liệu trong console
         });
     </script>
 </body>

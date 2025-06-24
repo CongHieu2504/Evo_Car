@@ -1386,3 +1386,329 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 15px;
   }
 }
+
+/* Exterior Section Styling - Ngoại thất */
+.exterior-section {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+    margin-top: 20px;
+}
+
+.exterior-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.exterior-description {
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.product-image {
+    max-width: 100%;
+    height: 440px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.exterior-gallery {
+    position: relative;
+    overflow: hidden;
+}
+
+.exterior-swiper .swiper-slide img {
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exterior-swiper .swiper-slide img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.exterior-swiper .swiper-button-next,
+.exterior-swiper .swiper-button-prev {
+    color: #dc3545;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exterior-swiper .swiper-button-next:after,
+.exterior-swiper .swiper-button-prev:after {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media (max-width: 767px) {
+    .exterior-gallery .swiper-slide img {
+        max-height: 150px;
+    }
+    .exterior-swiper .swiper-button-next,
+    .exterior-swiper .swiper-button-prev {
+        display: none;
+    }
+    .row > .col-md-6:first-child {
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .exterior-gallery .swiper-slide img {
+        max-height: 180px;
+    }
+}
+
+/* Interior Section Styling - Nội thất */
+.interior-section {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+    margin-top: 40px;
+}
+
+.interior-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.interior-description {
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.interior-gallery {
+    position: relative;
+    overflow: hidden;
+}
+
+.interior-swiper .swiper-slide img {
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interior-swiper .swiper-slide img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.interior-swiper .swiper-button-next,
+.interior-swiper .swiper-button-prev {
+    color: #dc3545;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.interior-swiper .swiper-button-next:after,
+.interior-swiper .swiper-button-prev:after {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media (max-width: 767px) {
+    .interior-gallery .swiper-slide img {
+        max-height: 150px;
+    }
+    .interior-swiper .swiper-button-next,
+    .interior-swiper .swiper-button-prev {
+        display: none;
+    }
+    .row > .col-md-6:first-child {
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .interior-gallery .swiper-slide img {
+        max-height: 180px;
+    }
+}
+
+/* Spec Section Styling - Thông số kỹ thuật */
+.spec-section {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+    margin-top: 40px;
+}
+
+.spec-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.spec-content {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.spec-item {
+    margin-bottom: 20px;
+}
+
+.spec-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #dc3545;
+    margin-bottom: 10px;
+}
+
+.spec-item ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.spec-item li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.spec-item li strong {
+    color: #000000;
+}
+
+.spec-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.spec-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.spec-content::-webkit-scrollbar-thumb {
+    background: #dc3545;
+    border-radius: 4px;
+}
+
+.spec-content::-webkit-scrollbar-thumb:hover {
+    background: #c82333;
+}
+
+@media (max-width: 767px) {
+    .spec-content {
+        max-height: 300px;
+    }
+    .spec-title {
+        font-size: 20px;
+    }
+    .spec-item h4 {
+        font-size: 16px;
+    }
+    .spec-item li {
+        font-size: 14px;
+    }
+}
+
+/* Cost Section Styling - Dự tính chi phí */
+.cost-section {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+    margin-top: 40px;
+}
+
+.cost-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cost-content {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cost-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.cost-content li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.cost-content strong {
+    color: #dc3545;
+}
+
+.cost-note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.cost-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cost-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.cost-content::-webkit-scrollbar-thumb {
+    background: #dc3545;
+    border-radius: 4px;
+}
+
+.cost-content::-webkit-scrollbar-thumb:hover {
+    background: #c82333;
+}
+
+@media (max-width: 767px) {
+    .cost-title {
+        font-size: 20px;
+    }
+    .cost-content {
+        max-height: 200px;
+        font-size: 14px;
+    }
+    .cost-note {
+        font-size: 12px;
+    }
+}
