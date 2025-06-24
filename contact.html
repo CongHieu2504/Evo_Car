@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Index - Bikin Bootstrap Template</title>
+    <title>Liên hệ - Evo Car</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -28,9 +28,11 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/contact.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Header -->
     <header class="header">
         <div class="container-fluid">
             <div class="logo">
@@ -40,7 +42,7 @@
             <!-- Navmenu cho desktop -->
             <nav class="navmenu">
                 <ul>
-                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="index.html">Trang chủ</a></li>
                     <li><a href="#">Giới thiệu</a></li>
                     <li class="dropdown">
                         <a href="#">Sản phẩm</a>
@@ -112,7 +114,7 @@
                     <h2 class="modal-title">Danh Mục Sản Phẩm</h2>
                     <nav class="modal-menu">
                         <ul>
-                            <li><a href="#">Trang Chủ</a></li>
+                            <li><a href="index.html">Trang Chủ</a></li>
                             <li><a href="#">Giới Thiệu</a></li>
                             <li><a href="#">Hệ Thống</a></li>
                             <li class="modal-dropdown">
@@ -146,119 +148,52 @@
         </div>
     </header>
 
-    <!-- Tìm kiếm -->
-    <section class="search-section">
-        <div class="search-bar bg-danger text-white py-2">
-            <div class="d-flex justify-content-between align-items-center w-100">
-                <div class="search-icon me-3">
-                    <i class="bi bi-car-front"></i> Tìm Kiếm Xe
+    <!-- Nội dung -->
+    <section class="contact-form-section">
+        <div class="container">
+            <h2 class="form-title">GỬI THÔNG TIN</h2>
+            <p class="form-description">
+                Bạn hãy điền nội dung tin nhắn vào form dưới đây và gửi cho chúng tôi. Chúng tôi sẽ trả lời bạn sau khi
+                nhận được.
+            </p>
+            <form action="#" method="post" class="contact-form">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="name">Họ và tên<span>*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email">Email<span>*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Nhập địa chỉ Email" required>
+                    </div>
                 </div>
-                <div class="search-inputs d-flex align-items-center">
-                    <input type="text" class="form-control me-2" placeholder="Từ khóa" aria-label="Từ khóa">
-                    <select class="form-select me-2" aria-label="Dòng xe">
-                        <option value="all">Tất cả</option>
-                        <option value="suv">SUV</option>
-                        <option value="sedan">Sedan</option>
-                        <option value="mpv">MPV</option>
-                        <option value="hatchback">Hatch Back</option>
-                    </select>
-                    <select class="form-select me-2" aria-label="Thương hiệu">
-                        <option value="all">Tất cả</option>
-                        <option value="mitsubishi">Mitsubishi</option>
-                        <option value="mazda">Mazda</option>
-                        <option value="toyota">Toyota</option>
-                    </select>
-                    <button type="button" class="btn btn-dark btn-search">TÌM KIẾM</button>
+                <div class="mb-3">
+                    <label for="phone">Điện thoại<span>*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
                 </div>
+                <div class="mb-4">
+                    <label for="message">Nội dung<span>*</span></label>
+                    <textarea id="message" name="message" rows="5" placeholder="Nội dung liên hệ" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">GỬI TIN NHẮN</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="map-title">BẢN ĐỒ CỬA HÀNG</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7838.900594260273!2d106.6779185745172!3d10.7767825591882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f265fb27727%3A0x6491c3b013b912e8!2zMzAgxJAuIDMgVGjDoW5nIDIsIFBoxrDhu51uZyAxMiwgUXXhuq1uIDEwLCBI4buTIENow60gTWluaCA3MDAwMDAsIFZpZXRuYW0!5e0!3m2!1sen!2sus!4v1750740889695!5m2!1sen!2sus"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Sản phẩm nổi bật -->
-    <section class="featured-products py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="header-row d-flex justify-content-between align-items-center mb-4">
-                        <h2 class="text-black m-0">Sản phẩm nổi bật</h2>
-                        <div class="categories d-flex">
-                            <a href="#" class="text-danger mx-2">Hatch Back</a>
-                            <a href="#" class="text-danger mx-2">Sedan</a>
-                            <a href="#" class="text-danger mx-2">Pick up</a>
-                            <a href="#" class="text-danger mx-2">MPV</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="row text-center" id="featured-products-container"></div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Banner ở giữa -->
-    <section class="banner-section py-4">
-        <div class="container">
-            <div class="banner-content text-center mb-3">
-                <h3 class="text-white">
-                    <span class="text-danger">9999+</span> khách hàng mua xe tại Evo Car
-                </h3>
-                <p class="text-white">Sự tin tưởng của khách hàng chính là thành công lớn nhất của chúng tôi</p>
-            </div>
-            <div class="swiper banner-swiper">
-                <div class="swiper-wrapper" id="banner-container"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TOYOTA -->
-    <section class="toyota-products py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="toyota-header-row d-flex justify-content-between align-items-center mb-4">
-                        <h2 class="text-black m-0">TOYOTA</h2>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="swiper toyota-swiper" id="toyota-swiper">
-                        <div class="swiper-wrapper" id="toyota-container"></div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Banner Title -->
-    <section class="banner-title py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="banner-title-header">
-                        <img src="assets/img/evo_full_banner.webp" alt="Banner Long" class="banner-title-header-image">
-                    </div>
-                </div>
-                <div class="col-12 text-center mb-4">
-                    <button class="banner-title-text-black">EVO CAR MAGAZINE</button>
-                </div>
-                <div class="col-12">
-                    <div class="swiper banner-title-swiper">
-                        <div class="swiper-wrapper" id="banner-title-container"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-                <div class="col-12 text-center mt-4">
-                    <button class="view-all-button">XEM TẤT CẢ</button>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer id="footer" class="footer">
