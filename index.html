@@ -332,6 +332,18 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/product.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        // Xử lý nút tìm kiếm ở thanh tìm kiếm trang chủ
+        window.addEventListener('DOMContentLoaded', function () {
+            const btn = document.querySelector('.btn-search');
+            if (btn) {
+                btn.addEventListener('click', function () {
+                    const keyword = document.querySelector('.search-inputs input[type="text"]').value.trim();
+                    window.location.href = `search.html?q=${encodeURIComponent(keyword || 'all')}`;
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
