@@ -170,4 +170,52 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+
+    // --- Floating Zalo Chat & Notification Bell ---
+    if (!document.getElementById('floating-chat-btn')) {
+        const chatBtn = document.createElement('div');
+        chatBtn.id = 'floating-chat-btn';
+        chatBtn.className = 'floating-chat-btn';
+        chatBtn.innerHTML = '<i class="bi bi-chat-dots-fill"></i>';
+        chatBtn.title = 'Chat Zalo';
+        chatBtn.onclick = function () {
+            window.open('https://zalo.me/your-zalo-id', '_blank');
+        };
+        document.body.appendChild(chatBtn);
+    }
+    if (!document.getElementById('floating-bell-btn')) {
+        const bellBtn = document.createElement('div');
+        bellBtn.id = 'floating-bell-btn';
+        bellBtn.className = 'floating-bell-btn';
+        bellBtn.innerHTML = '<i class="bi bi-bell-fill"></i>';
+        bellBtn.title = 'Thông báo';
+        bellBtn.onclick = function () {
+            const popup = document.getElementById('bell-popup');
+            popup.classList.toggle('active');
+        };
+        document.body.appendChild(bellBtn);
+    }
+    if (!document.getElementById('bell-popup')) {
+        const popup = document.createElement('div');
+        popup.id = 'bell-popup';
+        popup.className = 'bell-popup';
+        popup.innerHTML = `
+            <button class="bell-popup-close" title="Đóng">&times;</button>
+            <h4>Tích hợp sẵn các ứng dụng</h4>
+            <ul>
+                <li><i class="bi bi-chevron-double-right"></i> Đánh giá sản phẩm</li>
+                <li><i class="bi bi-chevron-double-right"></i> Mua X tặng Y</li>
+                <li><i class="bi bi-chevron-double-right"></i> Ứng dụng Affiliate</li>
+                <li><i class="bi bi-chevron-double-right"></i> Đa ngôn ngữ</li>
+                <li><i class="bi bi-chevron-double-right"></i> Chatlive Facebook</li>
+            </ul>
+            <div class="bell-popup-note">
+                Lưu ý với các ứng dụng trả phí bạn cần cài đặt và mua ứng dụng này trên App store Sapo để sử dụng ngay
+            </div>
+        `;
+        document.body.appendChild(popup);
+        popup.querySelector('.bell-popup-close').onclick = function () {
+            popup.classList.remove('active');
+        };
+    }
 });

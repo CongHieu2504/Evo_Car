@@ -1712,3 +1712,110 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 12px;
     }
 }
+
+/* Floating Zalo Chat & Notification Bell */
+.floating-chat-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  background: #0084ff;
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.floating-chat-btn:hover {
+  background: #005ecb;
+}
+
+.floating-bell-btn {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  background: #ed1c24;
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.floating-bell-btn:hover {
+  background: #b8000b;
+}
+
+/* Bell Popup */
+.bell-popup {
+  position: fixed;
+  left: 24px;
+  bottom: 90px;
+  z-index: 10000;
+  background: #ed1c24;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  width: 320px;
+  max-width: 90vw;
+  padding: 24px 20px 16px 20px;
+  display: none;
+  flex-direction: column;
+  animation: bellPopupFadeIn 0.3s;
+}
+.bell-popup.active {
+  display: flex;
+}
+.bell-popup .bell-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.bell-popup h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #fff;
+}
+.bell-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+.bell-popup ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+.bell-popup ul li i {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+.bell-popup .bell-popup-note {
+  font-size: 0.95rem;
+  color: #fff;
+  opacity: 0.85;
+  margin-top: 8px;
+}
+@keyframes bellPopupFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
