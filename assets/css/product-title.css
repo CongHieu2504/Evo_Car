@@ -1,0 +1,126 @@
+/* Comment Section Styling */
+.comment-section {
+    background-color: #f8f9fa;
+}
+
+.post-navigation {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-navigation .nav-label {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.nav-controls .btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+}
+
+.nav-controls .btn:hover {
+    background-color: #fff;
+    color: #333;
+    border-color: #fff;
+}
+
+.comment-form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #dc3545;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.comment-note {
+    color: #6c757d;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.comment-form .form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.comment-form .form-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.comment-form .form-control:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.comment-form textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-comment-submit {
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-comment-submit:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .post-navigation {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .post-navigation .nav-label {
+        margin-bottom: 15px;
+        font-size: 12px;
+    }
+    
+    .nav-controls {
+        width: 100%;
+    }
+    
+    .nav-controls .btn {
+        width: 48%;
+        margin: 0 1%;
+    }
+    
+    .comment-form-container {
+        padding: 20px;
+    }
+    
+    .comment-title {
+        font-size: 16px;
+    }
+} 

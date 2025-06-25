@@ -28,6 +28,7 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/product-title.css" rel="stylesheet">
     <style>
         body {
             color: #000;
@@ -285,6 +286,64 @@
         </div>
     </section>
 
+    <!-- Navigation và Comment Section -->
+    <section class="comment-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Navigation Post -->
+                    <div
+                        class="post-navigation bg-dark text-white p-3 mb-4 d-flex justify-content-between align-items-center">
+                        <span class="nav-label">Bạn đang xem: Cận cảnh 'chiến binh sa mạc' Audi TT Safari</span>
+                        <div class="nav-controls">
+                            <button class="btn btn-outline-light btn-sm me-2" id="prev-post">
+                                <i class="bi bi-chevron-left"></i> Bài trước
+                            </button>
+                            <button class="btn btn-outline-light btn-sm" id="next-post">
+                                Bài sau <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Comment Form -->
+                    <div class="comment-form-container">
+                        <h3 class="comment-title mb-4">VIẾT BÌNH LUẬN CỦA BẠN</h3>
+                        <p class="comment-note mb-4">
+                            Địa chỉ email của bạn sẽ được bảo mật. Các trường bắt buộc được đánh dấu <span
+                                class="text-danger">*</span>
+                        </p>
+
+                        <form class="comment-form" action="#" method="post">
+                            <div class="form-group mb-4">
+                                <label for="comment-content" class="form-label">Nội dung<span
+                                        class="text-danger">*</span></label>
+                                <textarea class="form-control" id="comment-content" name="content" rows="6"
+                                    placeholder="Nội dung" required></textarea>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="comment-name" class="form-label">Họ tên<span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="comment-name" name="name"
+                                        placeholder="Họ tên" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="comment-email" class="form-label">Email<span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="comment-email" name="email"
+                                        placeholder="Email" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-comment-submit">GỬI BÌNH LUẬN</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer id="footer" class="footer">
         <div class="container footer-top">
@@ -401,6 +460,24 @@
                     relatedProductsContainer.innerHTML = '<p>Không có sản phẩm liên quan.</p>';
                 }
             }
+
+            // Navigation functionality
+            document.getElementById('prev-post').addEventListener('click', function () {
+                // Logic for previous post
+                alert('Chức năng "Bài trước" sẽ được phát triển');
+            });
+
+            document.getElementById('next-post').addEventListener('click', function () {
+                // Logic for next post  
+                alert('Chức năng "Bài sau" sẽ được phát triển');
+            });
+
+            // Comment form submission
+            document.querySelector('.comment-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Cảm ơn bạn đã gửi bình luận! Chức năng này sẽ được phát triển hoàn chỉnh.');
+                this.reset();
+            });
         });
     </script>
 </body>
