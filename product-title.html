@@ -281,6 +281,10 @@
                     <div id="related-products" class="list-group">
                         <!-- Sản phẩm sẽ render tại đây -->
                     </div>
+                    <div class="text-center mt-3">
+                        <a href="news.html" class="text-decoration-none" style="color: #dc3545; font-weight: 500;">Xem
+                            thêm</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -418,9 +422,20 @@
         document.addEventListener('DOMContentLoaded', function () {
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
+            const newsId = urlParams.get('newsId');
 
             let selectedProduct = JSON.parse(localStorage.getItem('selectedProduct')) || {};
             const productsData = JSON.parse(localStorage.getItem('productsData')) || [];
+
+            // Kiểm tra nếu đây là tin tức
+            if (newsId !== null) {
+                const selectedNews = JSON.parse(localStorage.getItem('selectedNews')) || {};
+                if (selectedNews && selectedNews.id) {
+                    // Hiển thị tin tức thay vì sản phẩm
+                    displayNewsContent(selectedNews);
+                    return;
+                }
+            }
 
             // Nếu có productId từ URL, sử dụng nó để load sản phẩm
             if (productId !== null && productsData.length > 0) {
@@ -506,6 +521,87 @@
                 }
 
                 contentContainer.innerHTML = contentHtml;
+            }
+
+            // Hàm hiển thị nội dung tin tức
+            function displayNewsContent(news) {
+                const contentContainer = document.querySelector('.col-lg-8 > div:first-child');
+                const navLabel = document.querySelector('.nav-label');
+
+                if (navLabel) {
+                    navLabel.textContent = `Bạn đang xem: ${news.title}`;
+                }
+
+                const newsHtml = `
+                    <h2 class="text-uppercase fw-bold mb-3 text-black" id="main-product-name">${news.title}</h2>
+                    <p class="text-muted mb-2">
+                        <i class="bi bi-person-circle"></i> Tác giả: ${news.author}  
+                        <i class="bi bi-calendar3"></i> Ngày đăng: ${news.date}
+                        <span class="badge bg-danger ms-2">${news.category}</span>
+                    </p>
+                    <div class="text-center mb-4">
+                        <img id="main-product-image" src="${news.image}" alt="${news.title}" class="img-fluid">
+                    </div>
+                    <p class="text-justify">
+                        ${news.excerpt}
+                    </p>
+                    <p class="text-justify">
+                        ${news.content}
+                    </p>
+                    <div class="mt-4">
+                        <p class="text-muted">
+                            <i class="bi bi-tags"></i> Danh mục: <strong>${news.category}</strong>
+                        </p>
+                    </div>
+                `;
+
+                contentContainer.innerHTML = newsHtml;
+
+                // Render related news thay vì sản phẩm
+                renderRelatedNews(news);
+            }
+
+            // Hàm render tin tức liên quan
+            function renderRelatedNews(currentNews) {
+                // Giả lập dữ liệu tin tức liên quan (có thể lấy từ news.js)
+                const relatedNews = [
+                    {
+                        title: "BMW 1-Series 2020: Khi X2 được thu nhỏ",
+                        excerpt: "BMW 1-Series thế hệ mới mang đến thiết kế táo bạo...",
+                        image: "assets/img/corolla.webp",
+                        category: "BMW"
+                    },
+                    {
+                        title: "Mercedes-AMG G63 cực ngầu của Brabus",
+                        excerpt: "Brabus giới thiệu phiên bản giới hạn Mercedes-AMG G63...",
+                        image: "assets/img/toyota-avanza.webp",
+                        category: "MERCEDES"
+                    },
+                    {
+                        title: "Hyundai Kona hybrid cuối cùng lộ diện",
+                        excerpt: "Hyundai Kona hybrid thế hệ mới với thiết kế hiện đại...",
+                        image: "assets/img/toyota-wifo.webp",
+                        category: "HYUNDAI"
+                    }
+                ];
+
+                const relatedContainer = document.getElementById('related-products');
+                if (relatedContainer) {
+                    relatedContainer.innerHTML = '';
+                    relatedNews.forEach(news => {
+                        const newsHtml = `
+                            <a href="news.html" class="list-group-item list-group-item-action d-flex gap-3 align-items-start">
+                                <img src="${news.image}" alt="${news.title}" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1 fw-bold">${news.title}</h6>
+                                    <p class="mb-1 small text-muted">${news.excerpt.substring(0, 60)}...</p>
+                                    <small class="badge bg-danger">${news.category}</small>
+                                </div>
+                            </a>
+                        `;
+                        relatedContainer.insertAdjacentHTML('beforeend', newsHtml);
+                    });
+                }
             }
 
             // Render phần "Đừng bỏ lỡ" với sản phẩm từ banner và banner-title
