@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Tất cả sản phẩm - Evo Car</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/products.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-flex {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="logo">
+                <img src="assets/img/logo.webp" alt="Logo">
+            </div>
+            <nav class="navmenu">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li class="dropdown active">
+                        <a href="products.html">Sản phẩm</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <span class="column-title">Hatch Back</span>
+                                <ul>
+                                    <li><a href="#">Hyundai i10</a></li>
+                                    <li><a href="#">KIA Morning</a></li>
+                                    <li><a href="#">Chevrolet Spark</a></li>
+                                    <li><a href="#">Mitsubishi Mirage</a></li>
+                                    <li><a href="#">Suzuki Celerio</a></li>
+                                    <li><a href="#">Ford Focus</a></li>
+                                    <li><a href="#">Toyota Yaris</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">Sedan</span>
+                                <ul>
+                                    <li><a href="#">Hyundai i10</a></li>
+                                    <li><a href="#">KIA Morning</a></li>
+                                    <li><a href="#">Chevrolet Spark</a></li>
+                                    <li><a href="#">Mitsubishi Mirage</a></li>
+                                    <li><a href="#">Suzuki Celerio</a></li>
+                                    <li><a href="#">Ford Focus</a></li>
+                                    <li><a href="#">Toyota Yaris</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">Pick Up</span>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">MPV</span>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">SUV</span>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">Crossover</span>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">Coupe - Xe Thể Thao</span>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="column-title">Convertible - Xe Mui Trần</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="news.html">Tin tức</a>
+                        <div class="dropdown-menu news-menu">
+                            <div class="dropdown-column">
+                                <ul>
+                                    <li><a href="#">Mua xe</a></li>
+                                    <li><a href="#">Lái xe</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="register.html">Đăng ký lái thử</a></li>
+                    <li><a href="branch.html">Đại lý</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <div class="mobile-nav-toggle">☰</div>
+                <div class="header-actions">
+                    <a href="#" class="search-icon" title="Tìm kiếm"><i class="bi bi-search"></i></a>
+                    <a href="#" class="user-icon" title="Tài khoản"><i class="bi bi-person"></i></a>
+                    <a href="#" class="cart-icon" title="Yêu thích"><i class="bi bi-heart"></i><span>0</span></a>
+                    <a href="#" class="cart-icon" title="Giỏ hàng"><i class="bi bi-cart"></i><span>0</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-banner-container">
+            <img src="assets/img/slider_1.webp" alt="Header Banner" class="header-banner">
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-section">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item active">Tất cả sản phẩm</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="products-section py-5 main-flex">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Danh mục và Bộ lọc -->
+                <aside class="col-lg-3 mb-4">
+                    <div class="sidebar-box mb-4">
+                        <h5 class="sidebar-title">DANH MỤC</h5>
+                        <ul class="sidebar-menu">
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li class="has-submenu active">
+                                <a href="#">Sản phẩm <span class="toggle-icon">-</span></a>
+                                <ul class="submenu">
+                                    <li><a href="#">Hatch Back</a></li>
+                                    <li><a href="#">Sedan</a></li>
+                                    <li><a href="#">Pick up</a></li>
+                                    <li><a href="#">MPV</a></li>
+                                    <li><a href="#">SUV</a></li>
+                                    <li><a href="#">Crossover</a></li>
+                                    <li><a href="#">Coupe – xe thể thao</a></li>
+                                    <li><a href="#">Convertible – xe mui trần</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Liên hệ</a></li>
+                            <li class="has-submenu">
+                                <a href="#">Tin tức <span class="toggle-icon">+</span></a>
+                                <ul class="submenu">
+                                    <li><a href="#">Mua xe</a></li>
+                                    <li><a href="#">Lái xe</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="register.html">Đăng ký lái thử</a></li>
+                            <li><a href="branch.html">Đại lý</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-box mb-4">
+                        <h5 class="sidebar-title">TÌM THEO</h5>
+                        <div class="mb-3">
+                            <strong>Thương hiệu</strong>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand-mitsubishi">
+                                <label class="form-check-label" for="brand-mitsubishi">Mitsubishi</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand-mazda">
+                                <label class="form-check-label" for="brand-mazda">Mazda</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand-toyota">
+                                <label class="form-check-label" for="brand-toyota">Toyota</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Loại</strong>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="type-suv">
+                                <label class="form-check-label" for="type-suv">SUV</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="type-sedan">
+                                <label class="form-check-label" for="type-sedan">Sedan</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="type-mpv">
+                                <label class="form-check-label" for="type-mpv">MPV</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="type-hatchback">
+                                <label class="form-check-label" for="type-hatchback">Hatch Back</label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <!-- Main Content: Sản phẩm -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+                        <h2 class="section-title mb-0">TẤT CẢ SẢN PHẨM</h2>
+                        <div class="sort-group d-flex align-items-center flex-wrap">
+                            <span class="me-2">Xếp theo:</span>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sort" id="sort-az" checked>
+                                <label class="form-check-label" for="sort-az">Tên A-Z</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sort" id="sort-za">
+                                <label class="form-check-label" for="sort-za">Tên Z-A</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sort" id="sort-new">
+                                <label class="form-check-label" for="sort-new">Hàng mới</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sort" id="sort-price-asc">
+                                <label class="form-check-label" for="sort-price-asc">Giá thấp đến cao</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sort" id="sort-price-desc">
+                                <label class="form-check-label" for="sort-price-desc">Giá cao xuống thấp</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="products-grid">
+                        <!-- Sản phẩm sẽ render ở đây bằng JS -->
+                    </div>
+                    <nav class="pagination-section mt-4">
+                        <ul class="pagination justify-content-center" id="pagination">
+                            <!-- Pagination sẽ render ở đây bằng JS -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span class="sitename">Evo Car</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>70 Lu Gia, Ward 15, District 11, Ho Chi Minh City</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>1900 6750</span></p>
+                        <p><strong>Email:</strong> <span>support@sapo.vn</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Mua hàng</h4>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="products.html">Sản phẩm</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                        <li><a href="news.html">Tin tức</a></li>
+                        <li><a href="register.html">Đăng ký lái thử</a></li>
+                        <li><a href="branch.html">Đại lý</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Dịch vụ khách hàng</h4>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="products.html">Sản phẩm</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                        <li><a href="news.html">Tin tức</a></li>
+                        <li><a href="register.html">Đăng ký lái thử</a></li>
+                        <li><a href="branch.html">Đại lý</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-newsletter">
+                    <h4>Đăng ký nhận tin</h4>
+                    <p>Nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
+                    <form action="forms/newsletter.php" method="post" class="php-email-form">
+                        <div class="newsletter-form"><input type="email" name="email"><input type="submit"
+                                value="Subscribe"></div>
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Evo car</strong> <span>All Rights Reserved</span>
+            </p>
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/products.js"></script>
+</body>
+
+</html>

@@ -1,6 +1,10 @@
 // Header
 document.querySelectorAll('.dropdown').forEach(dropdown => {
     dropdown.addEventListener('click', (e) => {
+        const mainLink = dropdown.querySelector('a');
+        if (e.target === mainLink) {
+            return;
+        }
         e.preventDefault();
         dropdown.classList.toggle('active');
     });
