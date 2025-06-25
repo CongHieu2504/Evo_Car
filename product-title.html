@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Index - Bikin Bootstrap Template</title>
+    <title>Product Title - Evo Car</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -28,6 +28,31 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+        body {
+            color: #000;
+            background-color: #fff;
+        }
+
+        .product-detail h2,
+        .product-detail p,
+        .list-group-item h6,
+        .list-group-item p {
+            color: #000 !important;
+            visibility: visible;
+        }
+
+        .product-title-section h4 {
+            color: #000 !important;
+            visibility: visible;
+            border-bottom: 2px solid #000;
+        }
+
+        .product-detail h2#main-product-name {
+            background-color: #fff;
+            display: block !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -147,115 +172,114 @@
         </div>
     </header>
 
-    <!-- Tìm kiếm -->
-    <section class="search-section">
-        <div class="search-bar bg-danger text-white py-2">
-            <div class="d-flex justify-content-between align-items-center w-100">
-                <div class="search-icon me-3">
-                    <i class="bi bi-car-front"></i> Tìm Kiếm Xe
-                </div>
-                <div class="search-inputs d-flex align-items-center">
-                    <input type="text" class="form-control me-2" placeholder="Từ khóa" aria-label="Từ khóa">
-                    <select class="form-select me-2" aria-label="Dòng xe">
-                        <option value="all">Tất cả</option>
-                        <option value="suv">SUV</option>
-                        <option value="sedan">Sedan</option>
-                        <option value="mpv">MPV</option>
-                        <option value="hatchback">Hatch Back</option>
-                    </select>
-                    <select class="form-select me-2" aria-label="Thương hiệu">
-                        <option value="all">Tất cả</option>
-                        <option value="mitsubishi">Mitsubishi</option>
-                        <option value="mazda">Mazda</option>
-                        <option value="toyota">Toyota</option>
-                    </select>
-                    <button type="button" class="btn btn-dark btn-search">TÌM KIẾM</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sản phẩm nổi bật -->
-    <section class="featured-products py-5">
+    <!-- Nội dung mới -->
+    <section class="product-title-section py-5">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="header-row d-flex justify-content-between align-items-center mb-4">
-                        <h2 class="text-black m-0">Sản phẩm nổi bật</h2>
-                        <div class="categories d-flex">
-                            <a href="#" class="text-danger mx-2">Hatch Back</a>
-                            <a href="#" class="text-danger mx-2">Sedan</a>
-                            <a href="#" class="text-danger mx-2">Pick up</a>
-                            <a href="#" class="text-danger mx-2">MPV</a>
+                <!-- CỘT TRÁI: NỘI DUNG CHI TIẾT -->
+                <div class="col-lg-8">
+                    <div>
+                        <h2 class="text-uppercase fw-bold mb-3 text-black" id="main-product-name">Sản phẩm không tên
+                        </h2>
+                        <p class="text-muted mb-2">
+                            <i class="bi bi-person-circle"></i> Tác giả: Evo Themes  
+                            <i class="bi bi-calendar3"></i> Ngày đăng: 05/06/2019
+                        </p>
+                        <div class="text-center mb-4">
+                            <img id="main-product-image" src="assets/img/triton.webp" alt="Mitsubishi Triton"
+                                class="img-fluid">
                         </div>
+                        <p class="text-justify">
+                            Bên cạnh việc tôn vinh những mẫu xe cổ điển tuyệt đẹp như Alfa Romeo 8C 2900B Berlinetta
+                            Touring
+                            1937,
+                            lễ hội Concorso d’Eleganza Villa d’Este còn là nơi mà các hãng xe công bố những dự án
+                            concept
+                            hay bản mẫu trước khi đi vào sản xuất.
+                            Mẫu xe Mitsubishi Triton là dòng bán tải bền bỉ, sở hữu khả năng vận hành mạnh mẽ và thiết
+                            kế
+                            hiện đại.
+                        </p>
                     </div>
-                </div>
-                <div class="col-12">
-                    <div class="row text-center" id="featured-products-container"></div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Banner ở giữa -->
-    <section class="banner-section py-4">
-        <div class="container">
-            <div class="banner-content text-center mb-3">
-                <h3 class="text-white">
-                    <span class="text-danger">9999+</span> khách hàng mua xe tại Evo Car
-                </h3>
-                <p class="text-white">Sự tin tưởng của khách hàng chính là thành công lớn nhất của chúng tôi</p>
-            </div>
-            <div class="swiper banner-swiper">
-                <div class="swiper-wrapper" id="banner-container"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
+                    <!-- ND -->
+                    <div>
+                        <!-- <h2 class="text-uppercase fw-bold mb-3 text-black" id="main-product-name">Sản phẩm không tên -->
+                        </h2>
+                        <p class="text-muted mb-2">
+                            <i class="bi bi-person-circle"></i> Tác giả: Evo Themes  
+                            <i class="bi bi-calendar3"></i> Ngày đăng: 05/06/2019
+                        </p>
+                        <div class="text-center mb-4">
+                            <img id="main-product-image" src="assets/img/corolla.webp" alt="Mitsubishi Triton"
+                                class="img-fluid">
+                        </div>
+                        <p class="text-justify">
+                            Bên cạnh việc tôn vinh những mẫu xe cổ điển tuyệt đẹp như Alfa Romeo 8C 2900B Berlinetta
+                            Touring
+                            1937,
+                            lễ hội Concorso d’Eleganza Villa d’Este còn là nơi mà các hãng xe công bố những dự án
+                            concept
+                            hay bản mẫu trước khi đi vào sản xuất.
+                            Mẫu xe Mitsubishi Triton là dòng bán tải bền bỉ, sở hữu khả năng vận hành mạnh mẽ và thiết
+                            kế
+                            hiện đại.
+                        </p>
+                    </div>
+                    <div>
+                        <!-- <h2 class="text-uppercase fw-bold mb-3 text-black" id="main-product-name">Sản phẩm không tên -->
+                        </h2>
+                        <p class="text-muted mb-2">
+                            <i class="bi bi-person-circle"></i> Tác giả: Evo Themes  
+                            <i class="bi bi-calendar3"></i> Ngày đăng: 05/06/2019
+                        </p>
+                        <div class="text-center mb-4">
+                            <img id="main-product-image" src="assets/img/toyota-avanza.webp" alt="Mitsubishi Triton"
+                                class="img-fluid">
+                        </div>
+                        <p class="text-justify">
+                            Bên cạnh việc tôn vinh những mẫu xe cổ điển tuyệt đẹp như Alfa Romeo 8C 2900B Berlinetta
+                            Touring
+                            1937,
+                            lễ hội Concorso d’Eleganza Villa d’Este còn là nơi mà các hãng xe công bố những dự án
+                            concept
+                            hay bản mẫu trước khi đi vào sản xuất.
+                            Mẫu xe Mitsubishi Triton là dòng bán tải bền bỉ, sở hữu khả năng vận hành mạnh mẽ và thiết
+                            kế
+                            hiện đại.
+                        </p>
+                    </div>
+                    <div>
+                        <!-- <h2 class="text-uppercase fw-bold mb-3 text-black" id="main-product-name">Sản phẩm không tên -->
+                        </h2>
+                        <p class="text-muted mb-2">
+                            <i class="bi bi-person-circle"></i> Tác giả: Evo Themes  
+                            <i class="bi bi-calendar3"></i> Ngày đăng: 05/06/2019
+                        </p>
+                        <div class="text-center mb-4">
+                            <img id="main-product-image" src="assets/img/toyota-wifo.webp" alt="Mitsubishi Triton"
+                                class="img-fluid">
+                        </div>
+                        <p class="text-justify">
+                            Bên cạnh việc tôn vinh những mẫu xe cổ điển tuyệt đẹp như Alfa Romeo 8C 2900B Berlinetta
+                            Touring
+                            1937,
+                            lễ hội Concorso d’Eleganza Villa d’Este còn là nơi mà các hãng xe công bố những dự án
+                            concept
+                            hay bản mẫu trước khi đi vào sản xuất.
+                            Mẫu xe Mitsubishi Triton là dòng bán tải bền bỉ, sở hữu khả năng vận hành mạnh mẽ và thiết
+                            kế
+                            hiện đại.
+                        </p>
+                    </div>
+                </div>
 
-    <!-- TOYOTA -->
-    <section class="toyota-products py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="toyota-header-row d-flex justify-content-between align-items-center mb-4">
-                        <h2 class="text-black m-0">TOYOTA</h2>
+                <!-- CỘT PHẢI: ĐỪNG BỎ LỠ -->
+                <div class="col-lg-4">
+                    <h4 class="mb-4 fw-bold border-bottom pb-2">Đừng bỏ lỡ</h4>
+                    <div id="related-products" class="list-group">
+                        <!-- Sản phẩm sẽ render tại đây -->
                     </div>
-                </div>
-                <div class="col-12">
-                    <div class="swiper toyota-swiper" id="toyota-swiper">
-                        <div class="swiper-wrapper" id="toyota-container"></div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Banner Title -->
-    <section class="banner-title py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="banner-title-header">
-                        <img src="assets/img/evo_full_banner.webp" alt="Banner Long" class="banner-title-header-image">
-                    </div>
-                </div>
-                <div class="col-12 text-center mb-4">
-                    <button class="banner-title-text-black">EVO CAR MAGAZINE</button>
-                </div>
-                <div class="col-12">
-                    <div class="swiper banner-title-swiper">
-                        <div class="swiper-wrapper" id="banner-title-container"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-                <div class="col-12 text-center mt-4">
-                    <button class="view-all-button">XEM TẤT CẢ</button>
                 </div>
             </div>
         </div>
@@ -329,8 +353,56 @@
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/js/product.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/product.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct')) || {};
+            const productsData = JSON.parse(localStorage.getItem('productsData')) || [];
+
+            // Cập nhật tiêu đề và ảnh
+            const productNameElement = document.getElementById('main-product-name');
+            if (selectedProduct && productId !== null) {
+                productNameElement.textContent = selectedProduct.name;
+                document.getElementById('main-product-image').src = selectedProduct.image || 'assets/img/placeholder.jpg';
+                document.getElementById('main-product-image').alt = selectedProduct.name;
+            }
+
+            // Render phần "Đừng bỏ lỡ" với sản phẩm từ banner và banner-title
+            const relatedProductsContainer = document.getElementById('related-products');
+            if (relatedProductsContainer) {
+                const relatedProducts = productsData
+                    .filter(product =>
+                        (product.section === 'banner' || product.section === 'banner-title') &&
+                        product.name !== (selectedProduct.name || '')
+                    )
+                    .slice(0, 3);
+
+                if (relatedProducts.length > 0) {
+                    relatedProducts.forEach((product, index) => {
+                        const productIndex = productsData.findIndex(p => p.name === product.name && p.section === product.section);
+                        const productImage = product.image || 'assets/img/placeholder.jpg';
+                        const productDescription = product.description || 'Không có mô tả chi tiết...';
+                        const productHtml = `
+                    <a href="product-title.html?id=${productIndex >= 0 ? productIndex : 0}" class="list-group-item list-group-item-action d-flex gap-3 align-items-start">
+                        <img src="${productImage}" alt="${product.name}" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1 fw-bold">${product.name}</h6>
+                            <p class="mb-1 small text-muted">${productDescription.substring(0, 60)}...</p>
+                        </div>
+                    </a>
+                `;
+                        relatedProductsContainer.insertAdjacentHTML('beforeend', productHtml);
+                    });
+                } else {
+                    relatedProductsContainer.innerHTML = '<p>Không có sản phẩm liên quan.</p>';
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -85,37 +85,109 @@ const productsData = [
         section: "banner",
         name: "Corolla Altis",
         description: "Corolla Altis 2020: Sedan đẳng cấp từ Toyota",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/corolla.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_1.webp",
+            "assets/img/corolla_altis_2.webp",
+            "assets/img/corolla_altis_3.webp",
+            "assets/img/corolla_altis_4.webp"
+        ],
+        additionalDescriptions: [
+            "Ngoại thất hiện đại với lưới tản nhiệt mới.",
+            "Nội thất sang trọng, không gian rộng rãi.",
+            "Hệ thống an toàn tiên tiến.",
+            "Tiết kiệm nhiên liệu vượt trội."
+        ]
     },
     {
         section: "banner",
         name: "Corolla Altis",
         description: "Corolla Altis 2019: Thiết kế hiện đại, tiết kiệm nhiên liệu",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/toyota-wifo.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_2019_1.webp",
+            "assets/img/corolla_altis_2019_2.webp",
+            "assets/img/corolla_altis_2019_3.webp",
+            "assets/img/corolla_altis_2019_4.webp"
+        ],
+        additionalDescriptions: [
+            "Thiết kế ngoại thất sắc nét.",
+            "Hệ thống giải trí tiên tiến.",
+            "Động cơ mạnh mẽ, bền bỉ.",
+            "Tiện nghi cao cấp cho gia đình."
+        ]
     },
     {
         section: "banner",
         name: "Corolla Altis",
         description: "Corolla Altis 2021: Tích hợp công nghệ tiên tiến",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/toyota-avanza.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_2019_1.webp",
+            "assets/img/corolla_altis_2019_2.webp",
+            "assets/img/corolla_altis_2019_3.webp",
+            "assets/img/corolla_altis_2019_4.webp"
+        ],
+        additionalDescriptions: [
+            "Thiết kế ngoại thất sắc nét.",
+            "Hệ thống giải trí tiên tiến.",
+            "Động cơ mạnh mẽ, bền bỉ.",
+            "Tiện nghi cao cấp cho gia đình."
+        ]
     },
     {
         section: "banner",
         name: "Corolla Altis",
         description: "Corolla Altis 2020: Sự lựa chọn hoàn hảo cho gia đình",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/corolla.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_2019_1.webp",
+            "assets/img/corolla_altis_2019_2.webp",
+            "assets/img/corolla_altis_2019_3.webp",
+            "assets/img/corolla_altis_2019_4.webp"
+        ],
+        additionalDescriptions: [
+            "Thiết kế ngoại thất sắc nét.",
+            "Hệ thống giải trí tiên tiến.",
+            "Động cơ mạnh mẽ, bền bỉ.",
+            "Tiện nghi cao cấp cho gia đình."
+        ]
     },
     {
         section: "banner",
         name: "Corolla Altis",
         description: "Corolla Altis 2020: Sự lựa chọn hoàn hảo cho gia đình",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/corolla.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_2019_1.webp",
+            "assets/img/corolla_altis_2019_2.webp",
+            "assets/img/corolla_altis_2019_3.webp",
+            "assets/img/corolla_altis_2019_4.webp"
+        ],
+        additionalDescriptions: [
+            "Thiết kế ngoại thất sắc nét.",
+            "Hệ thống giải trí tiên tiến.",
+            "Động cơ mạnh mẽ, bền bỉ.",
+            "Tiện nghi cao cấp cho gia đình."
+        ]
     },
     {
         section: "banner",
         name: "Corolla Altis",
         description: "Corolla Altis 2020: Sự lựa chọn hoàn hảo cho gia đình",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/corolla.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_2019_1.webp",
+            "assets/img/corolla_altis_2019_2.webp",
+            "assets/img/corolla_altis_2019_3.webp",
+            "assets/img/corolla_altis_2019_4.webp"
+        ],
+        additionalDescriptions: [
+            "Thiết kế ngoại thất sắc nét.",
+            "Hệ thống giải trí tiên tiến.",
+            "Động cơ mạnh mẽ, bền bỉ.",
+            "Tiện nghi cao cấp cho gia đình."
+        ]
     },
     // Toyota
     {
@@ -183,31 +255,91 @@ const productsData = [
         section: "banner-title",
         name: "COROLLA ALTIS",
         description: "Mẫu xe sedan đẳng cấp, tiết kiệm nhiên liệu.",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/corolla.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_title_1.webp",
+            "assets/img/corolla_altis_title_2.webp",
+            "assets/img/corolla_altis_title_3.webp",
+            "assets/img/corolla_altis_title_4.webp"
+        ],
+        additionalDescriptions: [
+            "Thiết kế khí động học tối ưu.",
+            "Hệ thống lái mượt mà.",
+            "Công nghệ hỗ trợ lái xe thông minh.",
+            "Bảo hành dài hạn."
+        ]
     },
     {
         section: "banner-title",
         name: "COROLLA ALTIS",
         description: "Thiết kế hiện đại, tích hợp công nghệ tiên tiến.",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/toyota-wifo.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_title_1.webp",
+            "assets/img/corolla_altis_title_2.webp",
+            "assets/img/corolla_altis_title_3.webp",
+            "assets/img/corolla_altis_title_4.webp"
+        ],
+        additionalDescriptions: [
+            "Thiết kế khí động học tối ưu.",
+            "Hệ thống lái mượt mà.",
+            "Công nghệ hỗ trợ lái xe thông minh.",
+            "Bảo hành dài hạn."
+        ]
     },
     {
         section: "banner-title",
         name: "COROLLA ALTIS",
         description: "Sự lựa chọn hoàn hảo cho gia đình.",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/corolla.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_title_1.webp",
+            "assets/img/corolla_altis_title_2.webp",
+            "assets/img/corolla_altis_title_3.webp",
+            "assets/img/corolla_altis_title_4.webp"
+        ],
+        additionalDescriptions: [
+            "Thiết kế khí động học tối ưu.",
+            "Hệ thống lái mượt mà.",
+            "Công nghệ hỗ trợ lái xe thông minh.",
+            "Bảo hành dài hạn."
+        ]
     },
     {
         section: "banner-title",
         name: "COROLLA ALTIS",
         description: "Sự lựa chọn hoàn hảo cho gia đình.",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/toyota-avanza.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_title_1.webp",
+            "assets/img/corolla_altis_title_2.webp",
+            "assets/img/corolla_altis_title_3.webp",
+            "assets/img/corolla_altis_title_4.webp"
+        ],
+        additionalDescriptions: [
+            "Thiết kế khí động học tối ưu.",
+            "Hệ thống lái mượt mà.",
+            "Công nghệ hỗ trợ lái xe thông minh.",
+            "Bảo hành dài hạn."
+        ]
     },
     {
         section: "banner-title",
         name: "COROLLA ALTIS",
         description: "Sự lựa chọn hoàn hảo cho gia đình.",
-        image: "assets/img/corolla.webp"
+        image: "assets/img/corolla.webp",
+        additionalImages: [
+            "assets/img/corolla_altis_title_1.webp",
+            "assets/img/corolla_altis_title_2.webp",
+            "assets/img/corolla_altis_title_3.webp",
+            "assets/img/corolla_altis_title_4.webp"
+        ],
+        additionalDescriptions: [
+            "Thiết kế khí động học tối ưu.",
+            "Hệ thống lái mượt mà.",
+            "Công nghệ hỗ trợ lái xe thông minh.",
+            "Bảo hành dài hạn."
+        ]
     }
 ];
 
@@ -303,7 +435,41 @@ function renderFeaturedProducts() {
     }
 }
 
-// (Giữ nguyên renderBanner, renderToyotaProducts, renderBannerTitle, chỉ cập nhật chuyển hướng trong renderToyotaProducts)
+// Hàm render banner ở giữa với điều hướng
+function renderBanner() {
+    if (document.getElementById('banner-container')) {
+        const container = document.getElementById('banner-container');
+        const bannerItems = productsData.filter(product => product.section === 'banner');
+        container.innerHTML = '';
+        bannerItems.forEach((item, index) => {
+            const bannerHtml = `
+                <div class="swiper-slide">
+                    <div class="banner-card" data-product-id="${index}">
+                        <img src="${item.image}" alt="${item.name}" class="banner-image">
+                        <p class="text-white mt-2">${item.description}</p>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', bannerHtml);
+        });
+
+        // Thêm sự kiện click để chuyển hướng với ID
+        container.addEventListener('click', (e) => {
+            const card = e.target.closest('.banner-card');
+            if (card) {
+                const productId = card.getAttribute('data-product-id');
+                const product = productsData[parseInt(productId)];
+                console.log('Banner product saved to localStorage:', product);
+                if (product) {
+                    localStorage.setItem('selectedProduct', JSON.stringify(product));
+                    window.location.href = `product-title.html?id=${productId}`;
+                } else {
+                    console.error('Banner product not found for id:', productId);
+                }
+            }
+        });
+    }
+}
 
 function renderToyotaProducts() {
     if (document.getElementById('toyota-container')) {
@@ -396,34 +562,16 @@ function renderToyotaProducts() {
     }
 }
 
-function renderBanner() {
-    if (document.getElementById('banner-container')) {
-        const container = document.getElementById('banner-container');
-        const bannerItems = productsData.filter(product => product.section === 'banner');
-        container.innerHTML = '';
-        bannerItems.forEach(item => {
-            const bannerHtml = `
-                <div class="swiper-slide">
-                    <div class="banner-card">
-                        <img src="${item.image}" alt="${item.name}" class="banner-image">
-                        <p class="text-white mt-2">${item.description}</p>
-                    </div>
-                </div>
-            `;
-            container.insertAdjacentHTML('beforeend', bannerHtml);
-        });
-    }
-}
-
+// Hàm render banner title với điều hướng
 function renderBannerTitle() {
     if (document.getElementById('banner-title-container')) {
         const container = document.getElementById('banner-title-container');
         const bannerTitleItems = productsData.filter(product => product.section === 'banner-title');
         container.innerHTML = '';
-        bannerTitleItems.forEach(item => {
+        bannerTitleItems.forEach((item, index) => {
             const bannerTitleHtml = `
                 <div class="swiper-slide">
-                    <div class="banner-title-card">
+                    <div class="banner-title-card" data-product-id="${index}">
                         <img src="${item.image}" alt="${item.name}" class="banner-title-image">
                         <h5 class="text-black mt-2">${item.name}</h5>
                         <p class="text-black mt-2">${item.description}</p>
@@ -431,6 +579,22 @@ function renderBannerTitle() {
                 </div>
             `;
             container.insertAdjacentHTML('beforeend', bannerTitleHtml);
+        });
+
+        // Thêm sự kiện click để chuyển hướng với ID
+        container.addEventListener('click', (e) => {
+            const card = e.target.closest('.banner-title-card');
+            if (card) {
+                const productId = card.getAttribute('data-product-id');
+                const product = productsData[parseInt(productId)];
+                console.log('Banner title product saved to localStorage:', product);
+                if (product) {
+                    localStorage.setItem('selectedProduct', JSON.stringify(product));
+                    window.location.href = `product-title.html?id=${productId}`;
+                } else {
+                    console.error('Banner title product not found for id:', productId);
+                }
+            }
         });
     }
 }
@@ -440,4 +604,6 @@ document.addEventListener('DOMContentLoaded', function () {
     renderBanner();
     renderToyotaProducts();
     renderBannerTitle();
+    // Lưu productsData vào localStorage
+    localStorage.setItem('productsData', JSON.stringify(productsData));
 });
