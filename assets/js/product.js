@@ -369,11 +369,20 @@ const productsData = [
 ];
 
 // Hàm render sản phẩm cho Sản phẩm nổi bật với icon và toggle
-function renderFeaturedProducts() {
+function renderFeaturedProducts(typeKeyword) {
     if (document.getElementById('featured-products-container')) {
         const container = document.getElementById('featured-products-container');
-        const featuredProducts = productsData.filter(product => product.section === 'featured');
+        let featuredProducts = productsData.filter(product => product.section === 'featured');
+        if (typeKeyword) {
+            featuredProducts = featuredProducts.filter(product =>
+                (product.details && product.details.toLowerCase().includes(typeKeyword))
+            );
+        }
         container.innerHTML = '';
+        if (featuredProducts.length === 0) {
+            container.innerHTML = '<div class="col-12 text-center text-muted py-5">Không có sản phẩm phù hợp.</div>';
+            return;
+        }
         featuredProducts.forEach((product, index) => {
             const productHtml = `
                 <div class="col-md-3 col-sm-6 mb-4">
@@ -432,7 +441,7 @@ function renderFeaturedProducts() {
             const card = e.target.closest('.product-card');
             if (card && !e.target.closest('.product-icon')) {
                 const productId = card.getAttribute('data-product-id');
-                const product = productsData[parseInt(productId)];
+                const product = featuredProducts[parseInt(productId)];
                 console.log('Product saved to localStorage:', product);
                 if (product) {
                     localStorage.setItem('selectedProduct', JSON.stringify(product));
@@ -625,6 +634,23 @@ function renderBannerTitle() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    const featuredTabs = document.querySelectorAll('.featured-products .categories a');
+    if (featuredTabs.length) {
+        featuredTabs.forEach(tab => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+                featuredTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const type = tab.textContent.trim();
+                let keyword = '';
+                if (type === 'Hatch Back') keyword = 'hatchback';
+                else if (type === 'Sedan') keyword = 'sedan';
+                else if (type === 'Pick up') keyword = 'bán tải';
+                else if (type === 'MPV') keyword = 'mpv';
+                renderFeaturedProducts(keyword);
+            });
+        });
+    }
     renderFeaturedProducts();
     renderBanner();
     renderToyotaProducts();
