@@ -419,15 +419,93 @@
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
 
-            const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct')) || {};
+            let selectedProduct = JSON.parse(localStorage.getItem('selectedProduct')) || {};
             const productsData = JSON.parse(localStorage.getItem('productsData')) || [];
+
+            // Nếu có productId từ URL, sử dụng nó để load sản phẩm
+            if (productId !== null && productsData.length > 0) {
+                const productIndex = parseInt(productId);
+                if (productIndex >= 0 && productIndex < productsData.length) {
+                    selectedProduct = productsData[productIndex];
+                    // Cập nhật localStorage với sản phẩm mới
+                    localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
+                }
+            }
 
             // Cập nhật tiêu đề và ảnh
             const productNameElement = document.getElementById('main-product-name');
-            if (selectedProduct && productId !== null) {
+            if (selectedProduct && selectedProduct.name) {
                 productNameElement.textContent = selectedProduct.name;
                 document.getElementById('main-product-image').src = selectedProduct.image || 'assets/img/placeholder.jpg';
                 document.getElementById('main-product-image').alt = selectedProduct.name;
+
+                // Cập nhật navigation label
+                const navLabel = document.querySelector('.nav-label');
+                if (navLabel) {
+                    navLabel.textContent = `Bạn đang xem: ${selectedProduct.name}`;
+                }
+
+                // Cập nhật nội dung bài viết dựa vào loại sản phẩm
+                updateProductContent(selectedProduct);
+            }
+
+            // Hàm cập nhật nội dung sản phẩm
+            function updateProductContent(product) {
+                const contentContainer = document.querySelector('.col-lg-8 > div:first-child');
+                let contentHtml = '';
+
+                if (product.section === 'banner' || product.section === 'banner-title') {
+                    // Content cho banner và banner-title
+                    const description = product.description || 'Mô tả sản phẩm đang được cập nhật...';
+                    const additionalInfo = product.details || 'Thông tin chi tiết đang được cập nhật...';
+
+                    contentHtml = `
+                        <h2 class="text-uppercase fw-bold mb-3 text-black" id="main-product-name">${product.name}</h2>
+                        <p class="text-muted mb-2">
+                            <i class="bi bi-person-circle"></i> Tác giả: Evo Themes  
+                            <i class="bi bi-calendar3"></i> Ngày đăng: ${product.year || '2024'}
+                        </p>
+                        <div class="text-center mb-4">
+                            <img id="main-product-image" src="${product.image}" alt="${product.name}" class="img-fluid">
+                        </div>
+                        <p class="text-justify">
+                            ${description}
+                        </p>
+                        <p class="text-justify">
+                            ${additionalInfo}
+                        </p>
+                        ${product.price ? `<p class="text-danger fw-bold">Giá: ${product.price}</p>` : ''}
+                        ${product.seats ? `<p>Số chỗ ngồi: ${product.seats} chỗ</p>` : ''}
+                        ${product.transmission ? `<p>Hộp số: ${product.transmission}</p>` : ''}
+                    `;
+                } else {
+                    // Content cho các loại sản phẩm khác
+                    const details = product.details || 'Thông tin chi tiết đang được cập nhật...';
+
+                    contentHtml = `
+                        <h2 class="text-uppercase fw-bold mb-3 text-black" id="main-product-name">${product.name}</h2>
+                        <p class="text-muted mb-2">
+                            <i class="bi bi-person-circle"></i> Tác giả: Evo Themes  
+                            <i class="bi bi-calendar3"></i> Ngày đăng: ${product.year || '2024'}
+                        </p>
+                        <div class="text-center mb-4">
+                            <img id="main-product-image" src="${product.image}" alt="${product.name}" class="img-fluid">
+                        </div>
+                        <p class="text-justify">
+                            ${details}
+                        </p>
+                        <div class="product-specs mt-4">
+                            ${product.price ? `<p class="text-danger fw-bold fs-5">Giá: ${product.price}</p>` : ''}
+                            <div class="row">
+                                ${product.year ? `<div class="col-md-6"><p><i class="bi bi-calendar"></i> Năm sản xuất: ${product.year}</p></div>` : ''}
+                                ${product.seats ? `<div class="col-md-6"><p><i class="bi bi-people"></i> Số chỗ ngồi: ${product.seats} chỗ</p></div>` : ''}
+                                ${product.transmission ? `<div class="col-md-6"><p><i class="bi bi-gear"></i> Hộp số: ${product.transmission}</p></div>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                contentContainer.innerHTML = contentHtml;
             }
 
             // Render phần "Đừng bỏ lỡ" với sản phẩm từ banner và banner-title
@@ -446,7 +524,7 @@
                         const productImage = product.image || 'assets/img/placeholder.jpg';
                         const productDescription = product.description || 'Không có mô tả chi tiết...';
                         const productHtml = `
-                    <a href="product-title.html?id=${productIndex >= 0 ? productIndex : 0}" class="list-group-item list-group-item-action d-flex gap-3 align-items-start">
+                    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 align-items-start related-product" data-product-index="${productIndex}">
                         <img src="${productImage}" alt="${product.name}" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;">
                         <div class="flex-grow-1">
                             <h6 class="mb-1 fw-bold">${product.name}</h6>
@@ -455,6 +533,19 @@
                     </a>
                 `;
                         relatedProductsContainer.insertAdjacentHTML('beforeend', productHtml);
+                    });
+
+                    // Thêm event listener cho các sản phẩm liên quan
+                    document.querySelectorAll('.related-product').forEach(link => {
+                        link.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            const productIndex = parseInt(this.getAttribute('data-product-index'));
+                            if (productIndex >= 0 && productIndex < productsData.length) {
+                                const clickedProduct = productsData[productIndex];
+                                localStorage.setItem('selectedProduct', JSON.stringify(clickedProduct));
+                                window.location.href = `product-title.html?id=${productIndex}`;
+                            }
+                        });
                     });
                 } else {
                     relatedProductsContainer.innerHTML = '<p>Không có sản phẩm liên quan.</p>';

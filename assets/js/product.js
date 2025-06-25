@@ -253,9 +253,14 @@ const productsData = [
     // Banner Title
     {
         section: "banner-title",
-        name: "COROLLA ALTIS",
-        description: "Mẫu xe sedan đẳng cấp, tiết kiệm nhiên liệu.",
+        name: "COROLLA ALTIS 2024",
+        description: "Mẫu xe sedan đẳng cấp, tiết kiệm nhiên liệu với công nghệ hybrid hiện đại.",
         image: "assets/img/corolla.webp",
+        year: 2024,
+        price: "850.000.000đ",
+        seats: 5,
+        transmission: "CVT",
+        details: "Toyota Corolla Altis 2024 mang đến sự kết hợp hoàn hảo giữa hiệu suất vượt trội và tiết kiệm nhiên liệu. Thiết kế ngoại thất hiện đại với lưới tản nhiệt sắc nét, đèn LED full và mâm hợp kim thể thao. Nội thất sang trọng với chất liệu cao cấp, màn hình cảm ứng 10.5 inch tích hợp Apple CarPlay và Android Auto.",
         additionalImages: [
             "assets/img/corolla_altis_title_1.webp",
             "assets/img/corolla_altis_title_2.webp",
@@ -271,74 +276,94 @@ const productsData = [
     },
     {
         section: "banner-title",
-        name: "COROLLA ALTIS",
-        description: "Thiết kế hiện đại, tích hợp công nghệ tiên tiến.",
-        image: "assets/img/toyota-wifo.webp",
+        name: "MITSUBISHI TRITON 2024",
+        description: "Xe bán tải mạnh mẽ, chinh phục mọi địa hình với công nghệ 4WD tiên tiến.",
+        image: "assets/img/mitsubishi-triton-4x2-at-mivec-10l-2019.webp",
+        year: 2024,
+        price: "795.000.000đ",
+        seats: 5,
+        transmission: "6AT",
+        details: "Mitsubishi Triton 2024 là chiếc xe bán tải được thiết kế để chinh phục mọi thử thách. Động cơ diesel MIVEC 2.4L mạnh mẽ, hệ thống treo cải tiến giúp vận hành êm ái cả trên đường phố lẫn địa hình khó khăn. Cabin rộng rãi với các tiện nghi hiện đại và hệ thống an toàn 5 sao.",
         additionalImages: [
-            "assets/img/corolla_altis_title_1.webp",
-            "assets/img/corolla_altis_title_2.webp",
-            "assets/img/corolla_altis_title_3.webp",
-            "assets/img/corolla_altis_title_4.webp"
+            "assets/img/triton_title_1.webp",
+            "assets/img/triton_title_2.webp",
+            "assets/img/triton_title_3.webp",
+            "assets/img/triton_title_4.webp"
         ],
         additionalDescriptions: [
-            "Thiết kế khí động học tối ưu.",
-            "Hệ thống lái mượt mà.",
-            "Công nghệ hỗ trợ lái xe thông minh.",
-            "Bảo hành dài hạn."
+            "Khả năng vận hành địa hình vượt trội.",
+            "Thùng xe rộng rãi, tiện dụng.",
+            "Hệ thống an toàn toàn diện.",
+            "Bảo hành 5 năm hoặc 200.000km."
         ]
     },
     {
         section: "banner-title",
-        name: "COROLLA ALTIS",
-        description: "Sự lựa chọn hoàn hảo cho gia đình.",
-        image: "assets/img/corolla.webp",
+        name: "TOYOTA RUSH 2024",
+        description: "SUV 7 chỗ đa năng, phù hợp cho gia đình hiện đại với thiết kế năng động.",
+        image: "assets/img/nguoi-dua-tin-toyota-rush-2018-ra-mat-thai-lan-1-jpeg.webp",
+        year: 2024,
+        price: "668.000.000đ",
+        seats: 7,
+        transmission: "4AT",
+        details: "Toyota Rush 2024 là lựa chọn tối ưu cho gia đình cần không gian rộng rãi và khả năng vận hành linh hoạt. Thiết kế SUV thể thao với khoảng sáng gầm cao 220mm, dễ dàng di chuyển trên nhiều địa hình. Nội thất 7 chỗ ngồi tiện nghi với hàng loạt tính năng an toàn tiêu chuẩn.",
         additionalImages: [
-            "assets/img/corolla_altis_title_1.webp",
-            "assets/img/corolla_altis_title_2.webp",
-            "assets/img/corolla_altis_title_3.webp",
-            "assets/img/corolla_altis_title_4.webp"
+            "assets/img/rush_title_1.webp",
+            "assets/img/rush_title_2.webp",
+            "assets/img/rush_title_3.webp",
+            "assets/img/rush_title_4.webp"
         ],
         additionalDescriptions: [
-            "Thiết kế khí động học tối ưu.",
-            "Hệ thống lái mượt mà.",
-            "Công nghệ hỗ trợ lái xe thông minh.",
-            "Bảo hành dài hạn."
+            "7 chỗ ngồi rộng rãi, thoải mái.",
+            "Khoảng sáng gầm cao 220mm.",
+            "Tiết kiệm nhiên liệu ấn tượng.",
+            "Hệ thống giải trí hiện đại."
         ]
     },
     {
         section: "banner-title",
-        name: "COROLLA ALTIS",
-        description: "Sự lựa chọn hoàn hảo cho gia đình.",
+        name: "TOYOTA AVANZA 2024",
+        description: "MPV gia đình thế hệ mới với thiết kế thông minh và tiết kiệm nhiên liệu.",
         image: "assets/img/toyota-avanza.webp",
+        year: 2024,
+        price: "558.000.000đ",
+        seats: 7,
+        transmission: "CVT",
+        details: "Toyota Avanza 2024 được nâng cấp toàn diện với thiết kế hiện đại hơn và nhiều tiện nghi cao cấp. Động cơ 1.5L Dual VVT-i mang lại hiệu suất vận hành mượt mà và tiết kiệm nhiên liệu vượt trội. Không gian nội thất 7 chỗ ngồi được tối ưu hóa cho sự thoải mái tối đa.",
         additionalImages: [
-            "assets/img/corolla_altis_title_1.webp",
-            "assets/img/corolla_altis_title_2.webp",
-            "assets/img/corolla_altis_title_3.webp",
-            "assets/img/corolla_altis_title_4.webp"
+            "assets/img/avanza_title_1.webp",
+            "assets/img/avanza_title_2.webp",
+            "assets/img/avanza_title_3.webp",
+            "assets/img/avanza_title_4.webp"
         ],
         additionalDescriptions: [
-            "Thiết kế khí động học tối ưu.",
-            "Hệ thống lái mượt mà.",
-            "Công nghệ hỗ trợ lái xe thông minh.",
-            "Bảo hành dài hạn."
+            "Thiết kế ngoại thất trẻ trung, năng động.",
+            "7 chỗ ngồi linh hoạt, gập được.",
+            "Tiết kiệm nhiên liệu chỉ 5.1L/100km.",
+            "Hệ thống an toàn Toyota Safety Sense."
         ]
     },
     {
         section: "banner-title",
-        name: "COROLLA ALTIS",
-        description: "Sự lựa chọn hoàn hảo cho gia đình.",
-        image: "assets/img/corolla.webp",
+        name: "TOYOTA WIGO 2024",
+        description: "Hatchback nhỏ gọn hoàn hảo cho phố thị với chi phí vận hành thấp.",
+        image: "assets/img/toyota-wifo.webp",
+        year: 2024,
+        price: "405.000.000đ",
+        seats: 5,
+        transmission: "CVT",
+        details: "Toyota Wigo 2024 là lựa chọn lý tưởng cho những ai cần một chiếc xe nhỏ gọn, dễ lái và tiết kiệm. Thiết kế trẻ trung với nhiều màu sắc bắt mắt, nội thất thông minh tận dụng tối đa không gian. Động cơ 1.2L VVT-i mang lại sự cân bằng tối ưu giữa hiệu suất và tiết kiệm nhiên liệu.",
         additionalImages: [
-            "assets/img/corolla_altis_title_1.webp",
-            "assets/img/corolla_altis_title_2.webp",
-            "assets/img/corolla_altis_title_3.webp",
-            "assets/img/corolla_altis_title_4.webp"
+            "assets/img/wigo_title_1.webp",
+            "assets/img/wigo_title_2.webp",
+            "assets/img/wigo_title_3.webp",
+            "assets/img/wigo_title_4.webp"
         ],
         additionalDescriptions: [
-            "Thiết kế khí động học tối ưu.",
-            "Hệ thống lái mượt mà.",
-            "Công nghệ hỗ trợ lái xe thông minh.",
-            "Bảo hành dài hạn."
+            "Dễ dàng đỗ xe trong phố.",
+            "Chi phí bảo dưỡng thấp.",
+            "Trang bị đầy đủ tiện nghi cơ bản.",
+            "Phù hợp với lái xe mới."
         ]
     }
 ];
