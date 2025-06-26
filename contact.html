@@ -36,7 +36,7 @@
     <header class="header">
         <div class="container-fluid">
             <div class="logo">
-                <img src="assets/img/logo.webp" alt="Logo">
+                <a href="index.html"><img src="assets/img/logo.webp" alt="Logo"></a>
             </div>
 
             <!-- Navmenu cho desktop -->
@@ -137,6 +137,8 @@
                 <div class="mobile-nav-toggle">☰</div>
                 <div class="header-actions">
                     <a href="#" class="search-icon" title="Tìm kiếm"><i class="bi bi-search"></i></a>
+                    <input type="text" class="header-search-input" placeholder="Tìm sản phẩm..."
+                        style="display:none; position:absolute; right:60px; top:50%; transform:translateY(-50%); width:220px; padding:6px 12px; border:1px solid #ccc; border-radius:4px; z-index:2000; background:#fff; color:#222; font-size:15px;" />
                     <a href="#" class="user-icon" title="Tài khoản"><i class="bi bi-person"></i></a>
                     <a href="#" class="cart-icon" title="Yêu thích"><i class="bi bi-heart"></i><span>0</span></a>
                     <a href="#" class="cart-icon" title="Giỏ hàng"><i class="bi bi-cart"></i><span>0</span></a>
@@ -147,6 +149,19 @@
             <img src="assets/img/slider_1.webp" alt="Header Banner" class="header-banner">
         </div>
     </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay"
+        style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:#fff; z-index:3000; align-items:center; justify-content:center;">
+        <form class="search-overlay-form"
+            style="width:100%; max-width:600px; margin:auto; display:flex; align-items:center; justify-content:center; position:relative;">
+            <input type="text" class="search-overlay-input" placeholder="Tìm kiếm xe..."
+                style="width:100%; font-size:2rem; padding:18px 60px 18px 30px; border:none; border-bottom:2px solid #eee; outline:none; background:transparent; text-align:center; color:#222;"
+                autofocus />
+            <button type="button" class="search-overlay-close"
+                style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; font-size:2.2rem; color:#222; cursor:pointer;">&times;</button>
+        </form>
+    </div>
 
     <!-- Nội dung -->
     <section class="contact-form-section">
@@ -192,8 +207,6 @@
             </div>
         </div>
     </section>
-
-
 
     <!-- Footer -->
     <footer id="footer" class="footer">
@@ -265,6 +278,30 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/product.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        // Tìm kiếm header
+        const searchIcon = document.querySelector('.search-icon');
+        const searchInput = document.querySelector('.header-search-input');
+        if (searchIcon && searchInput) {
+            searchIcon.addEventListener('click', function (e) {
+                e.preventDefault();
+                searchInput.style.display = (searchInput.style.display === 'none' || searchInput.style.display === '') ? 'block' : 'none';
+                if (searchInput.style.display === 'block') {
+                    searchInput.focus();
+                }
+            });
+            searchInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') {
+                    const val = searchInput.value.trim();
+                    if (val) window.location.href = `search.html?query=${encodeURIComponent(val)}`;
+                }
+            });
+            // Ẩn input khi blur
+            searchInput.addEventListener('blur', function () {
+                setTimeout(() => { searchInput.style.display = 'none'; }, 200);
+            });
+        }
+    </script>
 </body>
 
 </html>

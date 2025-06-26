@@ -77,6 +77,30 @@ document.querySelector('.modal-news-toggle').addEventListener('click', (e) => {
     }
 });
 
+// Thêm sự kiện click cho các mục menu mobile
+// Sản Phẩm
+const mobileProduct = document.querySelector('.modal-product-toggle');
+if (mobileProduct) {
+    mobileProduct.addEventListener('dblclick', function (e) {
+        // Nếu người dùng double click vào "Sản Phẩm" thì chuyển trang
+        window.location.href = 'products.html';
+    });
+}
+// Tin tức
+const mobileNews = document.querySelector('.modal-news-toggle');
+if (mobileNews) {
+    mobileNews.addEventListener('dblclick', function (e) {
+        window.location.href = 'news.html';
+    });
+}
+// Liên hệ
+const mobileContact = document.querySelector('.modal-menu a[href="contact.html"]');
+if (mobileContact) {
+    mobileContact.addEventListener('click', function (e) {
+        window.location.href = 'contact.html';
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     // Khởi tạo Swiper cho Toyota
     var toyotaSwiper = new Swiper('.toyota-swiper', {

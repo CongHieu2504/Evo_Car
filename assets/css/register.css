@@ -74,3 +74,90 @@
     transform: translateY(-2px);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .test-drive-section {
+        padding: 40px 0;
+    }
+    
+    .test-drive-section h2 {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+    
+    .test-drive-section p {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    
+    .test-drive-section h5 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .test-drive-section input,
+    .test-drive-section select,
+    .test-drive-section textarea {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .test-drive-section button[type="submit"] {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .test-drive-section {
+        padding: 30px 0;
+    }
+    
+    .test-drive-section h2 {
+        font-size: 20px;
+        letter-spacing: 0.5px;
+    }
+    
+    .test-drive-section p {
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+    
+    .test-drive-section h5 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    
+    .test-drive-section label {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+    
+    .test-drive-section input,
+    .test-drive-section select,
+    .test-drive-section textarea {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .test-drive-section button[type="submit"] {
+        padding: 8px 0;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+    .test-drive-section {
+        padding: 50px 0;
+    }
+    
+    .test-drive-section h2 {
+        font-size: 26px;
+    }
+    
+    .test-drive-section p {
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+}
+

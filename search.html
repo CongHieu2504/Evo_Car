@@ -98,10 +98,32 @@
 
         .product-card img {
             width: 100%;
-            height: 260px;
-            object-fit: cover;
+            max-width: 100%;
+            object-fit: contain;
+            height: 220px;
             background: #fff;
             border-bottom: 1px solid #eee;
+        }
+
+        @media (max-width: 767.98px) {
+            .product-card img {
+                height: 160px;
+                object-fit: contain;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .product-card img {
+                height: 220px;
+                object-fit: contain;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .product-card img {
+                height: 260px;
+                object-fit: contain;
+            }
         }
 
         .row#search-products-grid {
@@ -115,7 +137,7 @@
     <header class="header">
         <div class="container-fluid">
             <div class="logo">
-                <img src="assets/img/logo.webp" alt="Logo">
+                <a href="index.html"><img src="assets/img/logo.webp" alt="Logo"></a>
             </div>
             <nav class="navmenu">
                 <ul>
@@ -184,6 +206,32 @@
                     <li><a href="branch.html">Đại lý</a></li>
                 </ul>
             </nav>
+            <!-- Navmenu mới cho mobile -->
+            <div class="modal-overlay" id="mobile-nav-modal">
+                <div class="modal-content">
+                    <button class="modal-close" id="modal-close">×</button>
+                    <h2 class="modal-title">Danh Mục Sản Phẩm</h2>
+                    <nav class="modal-menu">
+                        <ul>
+                            <li><a href="index.html">Trang Chủ</a></li>
+                            <li><a href="#">Giới Thiệu</a></li>
+                            <li><a href="#">Hệ Thống</a></li>
+                            <li class="modal-dropdown">
+                                <a href="#" class="modal-product-toggle">Sản Phẩm <span class="toggle-icon">+</span></a>
+                                <ul class="modal-sub-menu"></ul>
+                            </li>
+                            <li class="modal-dropdown">
+                                <a href="#" class="modal-news-toggle">Tin tức <span class="toggle-icon">+</span></a>
+                                <ul class="modal-news-sub-menu">
+                                    <li><a href="#">Mua xe</a></li>
+                                    <li><a href="#">Lái xe</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Liên Hệ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
             <div class="header-controls">
                 <div class="mobile-nav-toggle">☰</div>
                 <div class="header-actions">

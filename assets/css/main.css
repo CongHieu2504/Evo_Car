@@ -672,6 +672,33 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Cải thiện responsive cho tablet */
+@media (min-width: 769px) and (max-width: 991px) {
+  .search-inputs .form-control,
+  .search-inputs .form-select {
+    max-width: 120px;
+  }
+  .search-inputs .btn-search {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+}
+
+/* Responsive cho mobile nhỏ */
+@media (max-width: 576px) {
+  .search-icon {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .search-inputs .form-control,
+  .search-inputs .form-select,
+  .search-inputs .btn-search {
+    height: 32px;
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+}
+
 /* Featured Products Styling - Sản phẩm nổi bật */
 .featured-products {
   background-color: #ffffff;
@@ -1347,7 +1374,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer .credits a {
-  color: #00aaff;
+  color: #dc3545;
+  text-decoration: none;
 }
 
 /* PHP Email Form Messages */
@@ -1842,4 +1870,98 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes bellPopupFadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer .footer-top {
+    padding: 40px 0 20px 0;
+  }
+  
+  .footer .footer-about .logo span {
+    font-size: 20px;
+  }
+  
+  .footer h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .footer .footer-links ul a {
+    font-size: 13px;
+    padding: 4px 0;
+  }
+  
+  .footer .footer-newsletter .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer .footer-newsletter .newsletter-form input[type=email] {
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  .footer .footer-newsletter .newsletter-form input[type=submit] {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .footer .social-links {
+    justify-content: center;
+  }
+  
+  .footer .social-links a {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer .footer-top {
+    padding: 30px 0 15px 0;
+  }
+  
+  .footer .footer-about .logo span {
+    font-size: 18px;
+  }
+  
+  .footer h4 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  
+  .footer .footer-links ul a {
+    font-size: 12px;
+    padding: 3px 0;
+  }
+  
+  .footer .footer-newsletter p {
+    font-size: 13px;
+  }
+  
+  .footer .social-links a {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+  .footer .footer-top {
+    padding: 50px 0 30px 0;
+  }
+  
+  .footer .footer-newsletter .newsletter-form {
+    gap: 8px;
+  }
+  
+  .footer .footer-newsletter .newsletter-form input[type=email] {
+    width: 60%;
+  }
+  
+  .footer .footer-newsletter .newsletter-form input[type=submit] {
+    width: 35%;
+  }
 }
